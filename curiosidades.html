@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_curiosidades.css">
+    <link rel="stylesheet" href="styles_menu.css">
+    <title>Curiosidades - Elas por Elas</title>
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-icons"></div>
+            <button class="participar">
+                <a href="cadastro.html">Quero participar</a>
+            </button>
+        </div>
+
+        <nav>
+            <div class="logo">
+                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pesquisas.html">Pesquisas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="curiosidades.html" class="active">Curiosidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="mobile-menu" id="mobileMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pesquisas.html">Pesquisas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="curiosidades.html">Curiosidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="curiosidades">
+        <h1>Curiosidades</h1>
+        
+        <div class="item-curiosidade">
+            <img src="/api/placeholder/280/200" alt="Mulheres na História" class="imagem-curiosidade">
+            <div class="conteudo-curiosidade">
+                <h2>Pioneiras que Mudaram o Mundo</h2>
+                <p>Descubra histórias inspiradoras de mulheres que quebraram barreiras e abriram caminhos em diversas áreas do conhecimento. Desde Marie Curie, primeira mulher a ganhar um Prêmio Nobel, até Katherine Johnson, matemática que foi fundamental para o sucesso das missões espaciais da NASA. Estas mulheres não apenas desafiaram as normas de sua época, mas também deixaram um legado duradouro que continua a inspirar gerações.</p>
+                <a href="#" class="saiba-mais"><span>Saiba mais</span></a>
+            </div>
+        </div>
+
+        <div class="item-curiosidade">
+            <img src="/api/placeholder/280/200" alt="Inovações Femininas" class="imagem-curiosidade">
+            <div class="conteudo-curiosidade">
+                <h2>Invenções que Você Não Sabia que Foram Criadas por Mulheres</h2>
+                <p>O WiFi que você usa para navegar na internet foi co-inventado por Hedy Lamarr, uma atriz de Hollywood nos anos 40. Os limpadores de para-brisa foram inventados por Mary Anderson em 1903. Stephanie Kwolek desenvolveu o Kevlar, material usado em coletes à prova de balas. Conheça essas e outras invenções revolucionárias criadas por mentes femininas brilhantes que transformaram nosso cotidiano.</p>
+                <a href="#" class="saiba-mais"><span>Saiba mais</span></a>
+            </div>
+        </div>
+
+        <div class="item-curiosidade">
+            <img src="/api/placeholder/280/200" alt="Liderança Feminina" class="imagem-curiosidade">
+            <div class="conteudo-curiosidade">
+                <h2>O Poder da Liderança Feminina nos Negócios</h2>
+                <p>Estudos mostram que empresas com maior diversidade de gênero em cargos de liderança têm 21% mais chances de ter lucros acima da média. Países liderados por mulheres durante a pandemia obtiveram melhores resultados no controle da COVID-19. Descubra como a perspectiva feminina está revolucionando o mundo dos negócios e da política, trazendo abordagens mais colaborativas, empáticas e inovadoras para a tomada de decisões.</p>
+                <a href="#" class="saiba-mais"><span>Saiba mais</span></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script_curiosidade.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

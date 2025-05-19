@@ -1,0 +1,351 @@
+main {
+    padding: 40px 0;
+}
+
+.eventos {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(134, 8, 8, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.eventos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+}
+
+.eventos h1 {
+    text-align: center;
+    color: #6C2D2D;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
+}
+
+.eventos h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+.item-evento {
+    margin-bottom: 60px;
+    padding: 30px;
+    border: 1px solid #f1cfcf;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-evento::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(145, 47, 47, 0.05), transparent);
+    transition: width 0.5s ease;
+}
+
+.item-evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(134, 8, 8, 0.15);
+    border-color: #e0a0a0;
+}
+
+.item-evento:hover::before {
+    width: 100%;
+}
+
+.info-evento {
+    flex-grow: 1;
+    flex-basis: 0;
+    order: 2;
+    min-width: 0;
+    z-index: 1;
+}
+
+.info-evento h2 {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.descricao-evento {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #666;
+    font-size: 16px;
+}
+
+.evento-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 14px;
+    color: #666;
+}
+
+.meta-item i {
+    color: #912f2f;
+}
+
+.btn-saiba-mais {
+    background: linear-gradient(135deg, #912f2f 0%, #7a2525 100%);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(145, 47, 47, 0.3);
+}
+
+.btn-saiba-mais:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(145, 47, 47, 0.4);
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    order: 1;
+    flex-basis: 420px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 40%;
+    align-self: flex-start;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    height: 280px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: none;
+}
+
+.carousel-slide img.active {
+    display: block;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 15px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.arrow:hover {
+    background: rgba(0,0,0,0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+@media (max-width: 768px) {
+    .eventos {
+        width: 95%;
+        padding: 30px 20px;
+        margin: 20px auto;
+    }
+
+    .eventos h1 {
+        font-size: 36px;
+    }
+
+    .item-evento {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .info-evento {
+        order: initial;
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .carousel-container {
+        order: initial;
+        width: 100%;
+        flex-basis: auto;
+        max-width: none;
+    }
+
+    .carousel-slide {
+        height: 220px;
+    }
+
+    .arrow {
+        font-size: 18px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .evento-meta {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .eventos h1 {
+        font-size: 28px;
+    }
+
+    .info-evento h2 {
+        font-size: 24px;
+    }
+
+    .item-evento {
+        padding: 20px;
+    }
+}
+
+/* Loading Animation */
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.carousel-container:hover::before {
+    left: 100%;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #912f2f;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7a2525;
+}
