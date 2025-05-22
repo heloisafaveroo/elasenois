@@ -43,24 +43,7 @@
      }, 5000);
  });
 
- // Mobile menu functionality
- const hamburger = document.querySelector('.hamburger');
- const mobileMenu = document.querySelector('.mobile-menu');
-
- hamburger.addEventListener('click', () => {
-     hamburger.classList.toggle('open');
-     mobileMenu.classList.toggle('open');
- });
-
- // Close mobile menu when clicking outside
- document.addEventListener('click', (event) => {
-     if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
-         hamburger.classList.remove('open');
-         mobileMenu.classList.remove('open');
-     }
- });
-
- // Smooth scrolling for anchor links
+ // Rolagem suave para links de âncora
  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
      anchor.addEventListener('click', function (e) {
          e.preventDefault();
@@ -70,7 +53,7 @@
      });
  });
 
- // Add scroll effect to header
+ // Adicionar efeito de rolagem ao cabeçalho
  window.addEventListener('scroll', () => {
      const header = document.querySelector('header');
      if (window.scrollY > 100) {
@@ -80,7 +63,7 @@
      }
  });
 
- // Button click animations
+ // Animações de clique de botão
  document.querySelectorAll('.btn-saiba-mais').forEach(button => {
      button.addEventListener('click', function() {
          this.style.transform = 'scale(0.95)';

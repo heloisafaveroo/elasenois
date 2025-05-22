@@ -1,17 +1,3 @@
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.toggle('open');
-}
-
-// Fechar menu ao clicar fora
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    
-    if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
-        mobileMenu.classList.remove('open');
-    }
-});
 
 // Animação suave ao scrollar
 document.addEventListener('DOMContentLoaded', function() {

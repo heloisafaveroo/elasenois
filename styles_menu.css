@@ -158,11 +158,11 @@ nav {
 .mobile-menu li a {
     display: block;
     color: #5e0a0a;
-    padding: 15px 20px;
+    padding: 15px 30px;
     text-decoration: none;
     transition: background-color 0.3s ease;
     border-bottom: 1px solid #f0f0f0;
-    background-color: white;
+    background-color: rgb(255, 212, 212);
 }
 
 .mobile-menu li:last-child a {
@@ -196,6 +196,6 @@ nav {
 
     nav {
         padding: 15px;
-        background-color: white !important;
+        background-color: #5c1919; /* Cor alterada para um vermelho mais escuro */
     }
 }

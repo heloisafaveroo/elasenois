@@ -16,7 +16,26 @@ main {
     max-width: 950px;
     width: 100%;
     margin: 20px auto; /* Center the container with some margin */
+    border: 4px solid #e6cbcb ;
 }
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(145, 47, 47, 0.05), transparent);
+    transition: width 0.5s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(134, 8, 8, 0.15);
+    border-color: #811d1d;
+}
+
 
 .container h1 {
     color: #5e0a0a;
