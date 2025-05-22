@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre o Elas Por Elas</title>
     <link rel="stylesheet" href="style_sobre.css">
     <link rel="stylesheet" href="styles_menu.css">
+    <title>Sobre o Elas Por Elas</title>
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="social-icons">
-                </div>
+            </div>
             <button class="participar">
                 <a href="cadastro.html">Quero participar</a>
             </button>
@@ -30,12 +30,12 @@
                 <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="sobre.html" class="active">Sobre</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" onclick="toggleMobileMenu()">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="mobile-menu">
+            <ul class="mobile-menu" id="mobileMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
@@ -45,66 +45,78 @@
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
-</header>
+    </header>
 
     <main>
-        <section id="sobre-projeto">
+        <section class="noistodas">
+        <section class="sobre-projeto">
             <h2>Sobre o Projeto</h2>
-            <img src="https://media.istockphoto.com/id/1480574526/pt/foto/happy-multigenerational-people-having-fun-sitting-on-grass-in-a-public-park.jpg?s=612x612&w=0&k=20&c=9ODlrJIs4Gx_X__L5MVtBp5RP2xdshxEs_QkFrvp-k8=" alt="Logo do Projeto Elas Por Elas">
-            <p class= "sobreproj">O Projeto Elas Por Elas nasceu com o objetivo de [inserir a missão e os objetivos principais do projeto]. Acreditamos no poder da união e do apoio mútuo entre mulheres para [inserir os benefícios e impactos do projeto]. Nosso trabalho se desenvolve através de [mencionar as principais atividades e áreas de atuação do projeto].</p>
+            <img src="/api/placeholder/800/300" alt="Mulheres unidas no projeto Elas Por Elas">
+            <p class="sobreproj">
+                O Projeto Elas Por Elas nasceu com o objetivo de promover o empoderamento feminino e criar uma rede de apoio sólida entre mulheres de todas as idades e backgrounds. Acreditamos no poder da união e do apoio mútuo entre mulheres para transformar realidades, quebrar barreiras e construir um futuro mais equitativo e inclusivo.
+            </p>
+            <p>
+                Nosso trabalho se desenvolve através de pesquisas aprofundadas sobre questões femininas, organização de eventos educativos e de networking, compartilhamento de informações relevantes sobre direitos e oportunidades, e criação de uma comunidade online ativa onde mulheres podem se conectar, trocar experiências e se apoiar mutuamente.
+            </p>
+            <p>
+                Desde nossa fundação, já impactamos centenas de mulheres através de nossos programas, workshops e iniciativas. Nosso compromisso é continuar crescendo e expandindo nosso alcance para que mais mulheres possam se beneficiar desta rede de apoio e empoderamento.
+            </p>
+            
         </section>
+    </section>
 
-        <section id="coordenadoras">
+    <section class="noistodas">
+        <section class="coordenadoras">
             <h2>Coordenadoras</h2>
             <div class="membros">
                 <div class="membro">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr-3UxUxMfgA1PfjI5IDZC5US4OurHpBNN-g&s" alt="Foto da Coordenadora 1">
-                    <h3>[Nome da Coordenadora 1]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Coordenadora 1]</p>
-                    <p>[Descrição mais detalhada sobre a atuação e experiência da Coordenadora 1 no projeto e em sua área de atuação].</p>
+                    <img src="/api/placeholder/120/120" alt="Foto da Coordenadora Ana Silva">
+                    <h3>Ana Silva</h3>
+                    <p class="carreira">Doutora em Sociologia • Especialista em Gênero e Sociedade</p>
+                    <p>Com mais de 15 anos de experiência em pesquisa sobre questões de gênero, Ana é responsável pela coordenação geral do projeto e pelo desenvolvimento das pesquisas científicas. Professora universitária e autora de diversos artigos sobre empoderamento feminino, ela traz uma visão acadêmica sólida para nossas iniciativas.</p>
                 </div>
                 <div class="membro">
-                    <img src="https://www.eusemfronteiras.com.br/wp-content/uploads/2017/04/shutterstock_1910141359-810x540.jpg" alt="Foto da Coordenadora 2">
-                    <h3>[Nome da Coordenadora 2]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Coordenadora 2]</p>
-                    <p>[Descrição mais detalhada sobre a atuação e experiência da Coordenadora 2 no projeto e em sua área de atuação].</p>
+                    <img src="/api/placeholder/120/120" alt="Foto da Coordenadora Maria Santos">
+                    <h3>Maria Santos</h3>
+                    <p class="carreira">MBA em Gestão de Projetos • Empreendedora Social</p>
+                    <p>Maria é responsável pela gestão operacional do projeto e coordenação dos eventos. Com background em administração de empresas e vasta experiência em projetos sociais, ela garante que nossas ações sejam executadas com eficiência e alcancem o máximo impacto possível na comunidade.</p>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="integrantes">
             <h2>Integrantes do Projeto</h2>
             <div class="membros">
                 <div class="membro">
-                    <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Foto da Integrante 1">
-                    <h3>[Nome da Integrante 1]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Integrante 1]</p>
-                    <p>[Breve descrição sobre a participação da Integrante 1 no projeto].</p>
+                    <img src="https://proxis.com.br/wp-content/uploads/2019/02/mulher-sorrindo-no-parque.jpg" alt="Foto da Integrante Carla Oliveira">
+                    <h3>Carla Oliveira</h3>
+                    <p class="carreira">Psicóloga • Especialista em Desenvolvimento Pessoal</p>
+                    <p>Carla conduz os workshops de empoderamento pessoal e oferece suporte psicológico às participantes. Sua expertise em psicologia positiva contribui para o desenvolvimento de programas que fortalecem a autoestima e confiança das mulheres.</p>
                 </div>
                 <div class="membro">
-                    <img src="https://img.freepik.com/fotos-gratis/jovem-mulher-sorrindo-confiante-em-pe-no-parque_839833-8957.jpg?semt=ais_hybrid&w=740" alt="Foto da Integrante 2">
-                    <h3>[Nome da Integrante 2]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Integrante 2]</p>
-                    <p>[Breve descrição sobre a participação da Integrante 2 no projeto].</p>
+                    <img src="/api/placeholder/120/120" alt="Foto da Integrante Julia Costa">
+                    <h3>Julia Costa</h3>
+                    <p class="carreira">Jornalista • Especialista em Comunicação Digital</p>
+                    <p>Julia é responsável pela criação de conteúdo e gestão das redes sociais do projeto. Com formação em jornalismo e especialização em marketing digital, ela garante que nossa mensagem chegue ao maior número possível de mulheres através dos canais digitais.</p>
                 </div>
-
                 <div class="membro">
-                    <img src="https://media.istockphoto.com/id/1018800722/pt/foto/im-just-out-living-life.jpg?s=612x612&w=0&k=20&c=i6P9Um2bZPALCfqHZ7p5Zc0ataueHcL2kW6PdwAQmV4=" alt="Foto da Integrante 2">
-                    <h3>[Nome da Integrante 2]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Integrante 2]</p>
-                    <p>[Breve descrição sobre a participação da Integrante 2 no projeto].</p>
+                    <img src="/api/placeholder/120/120" alt="Foto da Integrante Fernanda Alves">
+                    <h3>Fernanda Alves</h3>
+                    <p class="carreira">Advogada • Especialista em Direitos da Mulher</p>
+                    <p>Fernanda oferece orientação jurídica gratuita às participantes e desenvolve materiais informativos sobre direitos femininos. Sua atuação é fundamental para esclarecer questões legais e empoderar mulheres através do conhecimento de seus direitos.</p>
                 </div>
-
                 <div class="membro">
-                    <img src="https://img.freepik.com/fotos-premium/eu-amo-o-que-faco-retrato-recortado-de-uma-jovem-empresaria-atraente-trabalhando-em-seu-laptop-enquanto-esta-sentada-no-escritorio_590464-62606.jpg" alt="Foto da Integrante 2">
-                    <h3>[Nome da Integrante 2]</h3>
-                    <p class="carreira">[Breve descrição da carreira da Integrante 2]</p>
-                    <p>[Breve descrição sobre a participação da Integrante 2 no projeto].</p>
+                    <img src="/api/placeholder/120/120" alt="Foto da Integrante Beatriz Lima">
+                    <h3>Beatriz Lima</h3>
+                    <p class="carreira">Economista • Consultora em Educação Financeira</p>
+                    <p>Beatriz conduz workshops sobre educação financeira e empreendedorismo feminino. Com experiência no mercado financeiro, ela ajuda mulheres a desenvolverem independência econômica e planejamento financeiro estratégico para seus projetos de vida.</p>
                 </div>
-                </div>
+            </div>
+        </section>
         </section>
     </main>
 
     <script src="script.js"></script>
+    <script src="script_sobre.js"></script>
 </body>
 </html>

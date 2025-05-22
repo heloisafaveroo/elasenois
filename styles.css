@@ -1,3 +1,4 @@
+/*define como a seção de introdução da página é exibida.*/
 .inicio {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,33 +8,28 @@
     align-items: center;
     min-height: 70vh;
 }
-
+/* centraliza o logo principal dentro da seção de introdução*/
 .logo-inicio {
     text-align: center;
 }
-
+/* garante que a imagem do logo principal seja responsiva*/
 .logo-inicio img {
     width: 100%;
     max-width: 450px;
     height: auto;
 }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
+/*Adiciona um espaçamento interno ao redor do texto dentro da seção de introdução*/
 .text {
     padding: 20px;
 }
-
+/*estiliza os títulos principais da página*/
 h1 {
     font-size: 3rem;
     color: #5c1919;
     margin-bottom: 20px;
     font-family: 'Georgia', serif;
 }
-
+/*estiliza os títulos secundários*/
 h2 {
     font-size: 2.8rem;
     color: #5c1919;
@@ -41,7 +37,7 @@ h2 {
     font-family: 'Georgia', serif;
     line-height: 1.2;
 }
-
+/*estiliza os títulos de menor importância ou os títulos dentro dos cards*/
 h3 {
     font-size: 1.4rem;
     color: #6C2D2D;
@@ -49,7 +45,7 @@ h3 {
     font-style: italic;
     line-height: 1.4;
 }
-
+/*estiliza todos os parágrafos de texto na página*/
 p {
     font-size: 1.1rem;
     color: #555;
@@ -57,7 +53,7 @@ p {
     text-align: justify;
     line-height: 1.7;
 }
-
+/* estiliza o botão "Saiba mais"*/
 .saiba-mais {
     background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
     color: white;
@@ -70,23 +66,23 @@ p {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(108, 45, 45, 0.3);
 }
-
+/*define o que acontece quando o mouse passa por cima do botão "Saiba mais"*/
 .saiba-mais:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(108, 45, 45, 0.4);
 }
-
+/*estiliza o link dentro do botão "Saiba mais", removendo o sublinhado e definindo a cor do texto como branco.*/
 .saiba-mais a {
     text-decoration: none;
     color: white;
 }
 
-/* Seção objetivos */
+/*estiliza a seção "NOSSOS OBJETIVOS"*/
 .objetivos {
     padding: 80px 20px;
     background-color: #fce7e7;
 }
-
+/*estiliza o título principal da seção de objetivos.*/
 .objetivos h1 {
     font-size: 3rem;
     color: #5c1919;
@@ -106,7 +102,7 @@ p {
     background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
     border-radius: 2px;
 }
-
+/* é um contêiner que organiza os cards dos objetivos em uma grade*/
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -114,7 +110,7 @@ p {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* estiliza cada card individualmente.*/
 .card {
     background: white;
     border-radius: 20px;
@@ -123,30 +119,30 @@ p {
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
-
+/* define o efeito quando o mouse passa por cima de um card.*/
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     border-color: #6C2D2D;
 }
-
+/*estiliza as imagens dentro de cada card, garantindo que ocupem 100% da largura do card e tenham uma altura definida*/
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
-
+/*Adiciona espaçamento interno ao conteúdo de texto dentro de cada card*/
 .card-content {
     padding: 30px;
 }
-
+/*Estiliza os títulos dentro dos cards*/
 .card h3 {
     color: #5c1919;
     font-size: 1.3rem;
     margin-bottom: 15px;
     font-weight: bold;
 }
-
+/*Estiliza os parágrafos dentro dos cards*/
 .card p {
     color: #666;
     font-size: 0.95rem;
