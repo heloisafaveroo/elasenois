@@ -1,7 +1,8 @@
-main {
-    padding: 40px 0;
-}
 
+main {
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 .eventos {
     background: white;
     padding: 50px;
@@ -246,6 +247,10 @@ main {
 }
 
 @media (max-width: 768px) {
+    main{
+        padding: 20px 0px;
+    }
+    
     .eventos {
         width: 95%;
         padding: 30px 20px;

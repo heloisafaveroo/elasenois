@@ -163,10 +163,13 @@
 
 
     @media (max-width: 768px) {
+        main{
+            padding: 20px 0px;
+        }
         .estudo{
-            width: 95%;
-        padding: 30px 20px;
-        margin: 20px auto;
+            width: 100%;
+            padding: 30px 20px;
+            margin: 20px auto;
         }
         h2 {
             font-size: 1.6em;

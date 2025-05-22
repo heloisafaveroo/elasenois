@@ -1,9 +1,8 @@
- /* Main Content Styles */
-        main {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+
+main {
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
         .noistodas {
         max-width: 1200px;
@@ -11,7 +10,6 @@
         padding: 50px;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(134, 8, 8, 0.1);
-        width: 90%;
         max-width: 1200px;
         margin: 0 auto;
         position: relative;
@@ -19,28 +17,59 @@
         margin-top: 20px;
         }
 
-        .noistodas:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(134, 8, 8, 0.15);
-        }
-
-        .noistodas h2 {
-            color: #8d1919;
-            border-bottom: 3px solid #8d1919;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            font-size: 2rem;
-            position: relative;
-        }
-
-        .noistodas h2::after {
+        .noistodas::before {
             content: '';
             position: absolute;
-            bottom: -3px;
+            top: 0;
             left: 0;
-            width: 50px;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    }
+
+         h2 {
+            text-align: center;
+            color: #6C2D2D;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .sobre-projeto h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
             height: 3px;
-            background: #b22222;
+            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+            border-radius: 2px;
+        }
+
+        .coordenadoras h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+            border-radius: 2px;
+        }
+
+        .integrantes h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+            border-radius: 2px;
         }
 
         p {
@@ -126,8 +155,8 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            main {
-                padding: 20px 15px;
+            main{
+                padding: 20px 20px;
             }
 
             section {
