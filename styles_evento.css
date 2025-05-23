@@ -156,9 +156,9 @@ main {
     flex-basis: 420px;
     flex-shrink: 0;
     flex-grow: 0;
-    max-width: 40%;
     align-self: flex-start;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin-top: 20px;
 }
 
 .carousel-slide {
@@ -216,17 +216,17 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
+    font-size: 15px;
     color: white;
     background: rgba(0,0,0,0.5);
     border: none;
-    padding: 15px;
+    padding: 5px;
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s ease;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -244,6 +244,9 @@ main {
 
 .next {
     right: 15px;
+}
+.doiscontainer {
+    width: 40%;
 }
 
 @media (max-width: 768px) {
@@ -315,4 +318,3 @@ main {
         padding: 20px;
     }
 }
-

@@ -121,8 +121,8 @@ main {
         }
 
         .membro img {
-            width: 120px;
-            height: 120px;
+            width: 190px;
+            height: 190px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
@@ -184,6 +184,10 @@ main {
 
             .stat-number {
                 font-size: 2rem;
+            }
+
+            .noistodas{
+                padding: 15px;
             }
         }
 
