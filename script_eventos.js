@@ -29,19 +29,21 @@
  }
 
  // Initialize carousels
- document.addEventListener('DOMContentLoaded', function() {
-     const numCarousels = document.querySelectorAll('.carousel-container').length;
-     for (let i = 0; i < numCarousels; i++) {
-         showSlides(1, i);
-     }
+document.addEventListener('DOMContentLoaded', function() {
+    const numCarousels = document.querySelectorAll('.carousel-container').length;
+    slideIndex = Array(numCarousels).fill(1); 
 
-     // Auto-advance carousels
-     setInterval(() => {
-         for (let i = 0; i < numCarousels; i++) {
-             plusSlides(1, i);
-         }
-     }, 5000);
- });
+    for (let i = 0; i < numCarousels; i++) {
+        showSlides(1, i);
+    }
+
+    // Auto-advance carousels
+    setInterval(() => {
+        for (let i = 0; i < numCarousels; i++) {
+            plusSlides(1, i);
+        }
+    }, 5000);
+});
 
  // Rolagem suave para links de âncora
  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
