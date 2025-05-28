@@ -150,6 +150,88 @@ p {
     text-align: justify;
 }
 
+/* Footer Styles */
+footer {
+    background-color: #5c1919; /* A darker shade of your theme color */
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(255, 150, 150);
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: #f6f0f0; /* A contrasting accent color, like gold */
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section.contact p i {
+    margin-right: 10px;
+    color: #FFD700;
+}
+
+.footer-section.social .social-links {
+    margin-top: 15px;
+}
+
+.footer-section.social .social-links a {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section.social .social-links a:hover {
+    color: #0066ff; /* Highlight on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgb(255, 150, 150);
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .footer-section.social .social-links a {
+        margin: 0 15px;
+    }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .inicio {

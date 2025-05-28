@@ -248,6 +248,19 @@ main {
 .doiscontainer {
     width: 40%;
 }
+.unicaimagem{
+    width: 50%; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unicaimagem img.single-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Example styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example styling */
+}
 
 @media (max-width: 768px) {
     .doiscontainer {
@@ -331,5 +344,14 @@ main {
 
     .item-evento {
         padding: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    .unicaimagem {
+        width: 100%;
     }
 }
