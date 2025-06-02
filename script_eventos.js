@@ -1,24 +1,25 @@
 // Carousel functionality
 let slideIndex = []; // Will be dynamically populated
 
-function plusSlides(n, carouselContainer) {
-    const carouselIndex = Array.from(document.querySelectorAll(".carousel-container")).indexOf(carouselContainer);
+function plusSlides(n, carouselIndex) {
+    // carouselIndex is already passed as an argument
     if (carouselIndex === -1) return; // Should not happen if called correctly
     showSlides(slideIndex[carouselIndex] += n, carouselIndex);
 }
 
-function currentSlide(n, carouselContainer) {
-    const carouselIndex = Array.from(document.querySelectorAll(".carousel-container")).indexOf(carouselContainer);
+function currentSlide(n, carouselIndex) {
+    // carouselIndex is already passed as an argument
     if (carouselIndex === -1) return; // Should not happen if called correctly
     showSlides(slideIndex[carouselIndex] = n, carouselIndex);
 }
 
 function showSlides(n, no) {
     let carouselContainers = document.querySelectorAll(".carousel-container");
-    if (!carouselContainers[no]) return; // Ensure the carousel exists
+    const targetCarousel = carouselContainers[no];
+    if (!targetCarousel) return; // Ensure the carousel exists
 
-    let slides = carouselContainers[no].querySelectorAll(".carousel-slide img");
-    let dots = carouselContainers[no].querySelectorAll(".dot");
+    let slides = targetCarousel.querySelectorAll(".carousel-slide img");
+    let dots = targetCarousel.querySelectorAll(".dot");
 
     if (n > slides.length) { slideIndex[no] = 1 }
     if (n < 1) { slideIndex[no] = slides.length }
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => {
         carouselContainers.forEach((container, i) => {
             if (container.querySelectorAll(".carousel-slide img").length > 0) {
-                plusSlides(1, container);
+                plusSlides(1, i);
             }
         });
     }, 5000);
