@@ -63,6 +63,10 @@ body {
 header {
     background-color: white !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky; /* Add this line */
+    top: 0; /* Add this line */
+    z-index: 1000; /* Add this line */
+    width: 100%; /* Add this line */
 }
 
 nav {
@@ -141,9 +145,9 @@ nav {
     list-style: none;
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     border-radius: 12px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1000;
-    min-width: 200px;
+    min-width: 250px;
     transform: translateY(-10px);
     opacity: 0;
     transition: all 0.3s ease;
@@ -173,6 +177,40 @@ nav {
     background-color: #fce7e7;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    z-index: 1;
+    background-color: #ffebeb;
+    min-width: 250px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); 
+    border-radius: 8px;
+    margin-top: 10px;
+    left: 50%; 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #faf1f1;
+}
+
+/* Mostra o conteúdo do dropdown quando o mouse está sobre o .dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
     .menu {
@@ -181,6 +219,33 @@ nav {
 
     .hamburger {
         display: flex;
+    }
+
+       .dropdown {
+        width: 100%; /* O dropdown ocupa a largura total */
+    }
+
+    .dropdown-content {
+        position: static; /* Remove o posicionamento absoluto em mobile */
+        box-shadow: none; /* Remove a sombra em mobile */
+        width: 100%; /* Ocupa a largura total */
+        background-color: #ffebeb; /* Cor de fundo para os subitens */
+        border-top: 1px solid #ccc; /* Linha divisória */
+    }
+
+    .dropdown-content a {
+        padding-left: 30px; /* Indenta os subitens para mobile */
+        background-color: #eee; /* Cor de fundo dos subitens em mobile */
+    }
+    
+     /* Oculta o dropdown no hover em mobile, pois usaremos JS para o clique */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    /* Adicionado pelo JS para exibir o dropdown */
+    .dropdown.active .dropdown-content {
+        display: block;
     }
 }
 

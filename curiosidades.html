@@ -17,29 +17,43 @@
             </button>
         </div>
 
-        <nav>
+        <nav aria-label="Navegação principal">
             <div class="logo">
-                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas">
+                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas - Projeto de Extensão IFPR">
             </div>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
+                <li class="dropdown">
+                    <a href="informacoes.html" class="dropbtn">Informações</a>
+                    <div class="dropdown-content">
+                        <a href="informacoes.html#direitos">Direitos das Mulheres</a>
+                        <a href="informacoes.html#saude">Saúde Reprodutiva</a>
+                        <a href="informacoes.html#higiene">Higiene e Autocuidado</a>
+                    </div>
+                </li>
                 <li><a href="curiosidades.html" class="active">Curiosidades</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMobileMenu()">
+            <div class="hamburger" aria-label="Menu de navegação" role="button">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-menu" aria-hidden="true">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropbtn" id="informacoesDropdownBtn">Informações</a>
+                    <div class="dropdown-content">
+                        <a href="informacoes.html#direitos">Direitos das Mulheres</a>
+                        <a href="informacoes.html#saude">Saúde Reprodutiva</a>
+                        <a href="informacoes.html#higiene">Higiene e Autocuidado</a>
+                    </div>
+                </li>
                 <li><a href="curiosidades.html">Curiosidades</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
@@ -75,6 +89,14 @@
                 <h2>O Poder da Liderança Feminina nos Negócios</h2>
                 <p>Estudos mostram que empresas com maior diversidade de gênero em cargos de liderança têm 21% mais chances de ter lucros acima da média. Países liderados por mulheres durante a pandemia obtiveram melhores resultados no controle da COVID-19. Descubra como a perspectiva feminina está revolucionando o mundo dos negócios e da política, trazendo abordagens mais colaborativas, empáticas e inovadoras para a tomada de decisões.</p>
                 <a href="#" class="saiba-mais"><span>Saiba mais</span></a>
+            </div>
+        </div>
+                <div class="item-curiosidade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpy3XmW_PvbiL-kezIFF2YxpWBcPLDURZLRg&s" alt="Liderança Feminina" class="imagem-curiosidade">
+            <div class="conteudo-curiosidade">
+                <h2>Carolina Maria de Jesus</h2>
+                <p>"Carolina Maria de Jesus foi uma escritora mineira nascida em 14 de março de 1914. Apesar de ter apenas dois anos de estudo formal, tornou-se escritora e ficou nacionalmente conhecida em 1960, com a publicação de seu livro Quarto de despejo: diário de uma favelada, no qual relatou o seu dia a dia na favela do Canindé, na cidade de São Paulo. Morreu em 13 de fevereiro de 1977. Hoje é considerada uma das mais importantes escritoras negras da literatura brasileira." </p>
+                <a href="https://brasilescola.uol.com.br/literatura/carolina-maria-jesus.htm" class="saiba-mais"><span>Saiba mais</span></a>
             </div>
         </div>
     </section>
