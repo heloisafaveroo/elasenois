@@ -183,15 +183,20 @@ nav {
 }
 
 .dropdown-content {
-    display: none; 
+     display: none; /* Hidden by default */
     position: absolute;
     z-index: 1;
     background-color: #ffebeb;
-    min-width: 250px; 
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); 
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
     border-radius: 8px;
     margin-top: 10px;
-    left: 50%; 
+    left: 50%;
+    transform: translateX(-50%); /* Center the dropdown below the item */
+    /* Add transition for a smoother appearance on hover if you desire */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Start hidden */
+    pointer-events: none; /* Prevents interaction when hidden */ 
 }
 
 .dropdown-content a {
@@ -204,6 +209,12 @@ nav {
 
 .dropdown-content a:hover {
     background-color: #faf1f1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; /* Fade in */
+    transform: translateX(-50%) translateY(0); /* Ensure it's not translated up/down for entrance */
+    pointer-events: auto; /* Allow interaction */
 }
 
 /* Mostra o conteúdo do dropdown quando o mouse está sobre o .dropdown */
@@ -229,7 +240,7 @@ nav {
         position: static; /* Remove o posicionamento absoluto em mobile */
         box-shadow: none; /* Remove a sombra em mobile */
         width: 100%; /* Ocupa a largura total */
-        background-color: #ffebeb; /* Cor de fundo para os subitens */
+        background-color: #4d0606; /* Cor de fundo para os subitens */
         border-top: 1px solid #ccc; /* Linha divisória */
     }
 
@@ -264,3 +275,29 @@ nav {
         background-color: #5c1919; /* Cor alterada para um vermelho mais escuro */
     }
 }
+
+/* Estilos para o ícone de seta no menu mobile */
+.mobile-menu .dropdown .dropbtn .arrow-icon {
+    display: inline-block; /* Permite transformações */
+    margin-left: 8px; /* Espaço entre o texto e o ícone */
+    transition: transform 0.3s ease; /* Transição suave para a rotação */
+}
+
+/* Ícone padrão (seta para baixo) */
+.mobile-menu .dropdown .dropbtn .arrow-icon::after {
+    content: '\25BC'; /* Caractere Unicode para seta para baixo (▼) */
+    font-family: 'Font Awesome 5 Free'; /* Se usar Font Awesome */
+    font-weight: 900; /* Para ícones sólidos do Font Awesome */
+    /* Ou, se não usar Font Awesome: */
+    /* content: '▼'; */
+}
+
+/* Ícone quando o dropdown está aberto (seta para cima) */
+.mobile-menu .dropdown.active .dropbtn .arrow-icon::after {
+    content: '\25B2'; /* Caractere Unicode para seta para cima (▲) */
+    /* Ou, se usar Font Awesome: */
+    /* content: '\f0d8'; */ /* Código Font Awesome para caret-up */
+    transform: rotate(180deg); /* Opcional: rotação para efeito */
+}
+
+

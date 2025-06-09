@@ -2,10 +2,13 @@ const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const nav = document.querySelector('nav');
 
+// This part handles the hamburger menu toggle
 hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
-    nav.classList.toggle('open');
+    nav.classList.toggle('open'); // This might affect your nav's background if not intended
 });
+
+// This part handles closing the mobile menu when clicking outside
 document.addEventListener('click', (event) => {
     const isClickInsideMenu = mobileMenu.contains(event.target) || hamburger.contains(event.target);
     if (!isClickInsideMenu && mobileMenu.classList.contains('open')) {
@@ -15,64 +18,76 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Para o dropdown "Informações"
+    // For the "Informações" dropdown
     const informacoesDropdownBtn = document.getElementById('informacoesDropdownBtn');
-    const informacoesDropdown = document.querySelector('.mobile-menu .dropdown'); // O <li> pai do dropdown
+    // Selects the parent <li> element of the dropdown within the mobile menu
+    const informacoesDropdown = document.querySelector('.mobile-menu .dropdown');
 
-    console.log(informacoesDropdownBtn, informacoesDropdown)
+    console.log(informacoesDropdownBtn, informacoesDropdown); // Good for debugging
 
     if (informacoesDropdownBtn && informacoesDropdown) {
         informacoesDropdownBtn.addEventListener('click', function(event) {
-            console.log("clicou")
-            // Previne a navegação para href="javascript:void(0);"
+            console.log("clicou"); // Good for debugging
+            // Prevents navigation for href="javascript:void(0);"
             event.preventDefault();
 
-            // Alterna a classe 'active' no elemento <li> pai do dropdown
+            // Toggles the 'active' class on the parent <li> element of the dropdown
             informacoesDropdown.classList.toggle('active');
 
-            // Opcional: Fecha o dropdown se clicar fora dele
-            // Crie uma função para fechar o dropdown ao clicar fora
+            // Optional: Close dropdown if clicked outside
             function closeDropdown(event) {
-                if (!informacoesDropdown.contains(event.target)) {
+                // Check if the click was outside the dropdown and outside the button itself
+                if (!informacoesDropdown.contains(event.target) && event.target !== informacoesDropdownBtn) {
                     informacoesDropdown.classList.remove('active');
-                    document.removeEventListener('click', closeDropdown);
+                    document.removeEventListener('click', closeDropdown); // Remove listener once closed
                 }
             }
 
-            // Adiciona o listener para fechar se o dropdown foi aberto
+            // Add listener to close if the dropdown was opened
             if (informacoesDropdown.classList.contains('active')) {
-                document.addEventListener('click', closeDropdown);
+                // Add a small delay or use setTimeout to allow event propagation to finish
+                // This prevents the same click event from immediately closing the dropdown
+                setTimeout(() => {
+                    document.addEventListener('click', closeDropdown);
+                }, 0);
             } else {
-                document.removeEventListener('click', closeDropdown);
+                document.removeEventListener('click', closeDropdown); // Remove listener if dropdown is closed
             }
 
-            // Impede que o clique no botão propague e feche o dropdown imediatamente
+            // Prevents the click on the button from propagating and closing the dropdown immediately
             event.stopPropagation();
         });
     }
 
-    // Opcional: Fecha o dropdown principal se ele estiver aberto e o resize ocorrer para desktop
+    // Optional: Closes the main menu and the "Informações" dropdown if resize to desktop
+    // Note: `navMenu` is not defined in the provided JS. Assuming it refers to mobileMenu or nav.
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-        }
-        // Garante que o dropdown de informações esteja fechado se voltar para desktop
-        if (window.innerWidth > 768 && informacoesDropdown.classList.contains('active')) {
-            informacoesDropdown.classList.remove('active');
-        }
-    });
-
-    // Opcional: Fecha o menu e o dropdown de informações se um link dentro do menu for clicado (útil em mobile)
-    const menuLinks = document.querySelectorAll('.menu a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
+        if (window.innerWidth > 768) { // Desktop view
+            if (mobileMenu.classList.contains('open')) { // Assuming navMenu is mobileMenu
+                mobileMenu.classList.remove('open');
+                nav.classList.remove('open'); // Reset nav class if it's tied to mobile menu open
             }
+            // Ensures the "Informações" dropdown is closed if returning to desktop view
             if (informacoesDropdown && informacoesDropdown.classList.contains('active')) {
                 informacoesDropdown.classList.remove('active');
             }
-        });
+        }
     });
 
+    // Optional: Closes the menu and the "Informações" dropdown if a link within the menu is clicked (useful in mobile)
+    const menuLinks = document.querySelectorAll('.mobile-menu a'); // Target links within the mobile menu
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Only close if it's not the dropdown button itself
+            if (this !== informacoesDropdownBtn) {
+                if (mobileMenu.classList.contains('open')) { // Assuming navMenu is mobileMenu
+                    mobileMenu.classList.remove('open');
+                    nav.classList.remove('open'); // Reset nav class
+                }
+                if (informacoesDropdown && informacoesDropdown.classList.contains('active')) {
+                    informacoesDropdown.classList.remove('active');
+                }
+            }
+        });
+    });
 });
