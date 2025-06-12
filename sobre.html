@@ -17,34 +17,53 @@
             </button>
         </div>
 
-        <nav>
+        <nav aria-label="Navegação principal">
             <div class="logo">
-                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas">
+                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas - Projeto de Extensão IFPR">
             </div>
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" >Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
+                <li class="dropdown">
+                    <a href="informacoes.html" class="dropbtn">Informações</a>
+                    <div class="dropdown-content">
+                        <a href="informacoes.html#direitos">Direitos das Mulheres</a>
+                        <a href="informacoes.html#saude">Saúde Reprodutiva</a>
+                        <a href="informacoes.html#higiene">Higiene e Autocuidado</a>
+                        <a href="informacoes.html#rededeapoio">Rede de Apoio</a>
+                        <a href="informacoes.html#projetos">Projetos de ajuda e apoio</a>
+                    </div>
+                </li>
                 <li><a href="curiosidades.html">Curiosidades</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="sobre.html" class="active">Sobre</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Menu de navegação" role="button">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-menu" aria-hidden="true">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropbtn" id="informacoesDropdownBtn">Informações <span class="arrow-icon"></span></a>
+                    <div class="dropdown-content">
+                        <a href="informacoes.html#direitos">Direitos das Mulheres</a>
+                        <a href="informacoes.html#saude">Saúde Reprodutiva</a>
+                        <a href="informacoes.html#higiene">Higiene e Autocuidado</a>
+                        <a href="informacoes.html#rededeapoio">Rede de Apoio</a>
+                        <a href="informacoes.html#projetos">Projetos de ajuda e apoio</a>
+                    </div>
+                </li>
                 <li><a href="curiosidades.html">Curiosidades</a></li>
                 <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
@@ -113,23 +132,11 @@
     </main>
 
 
-         <footer>
+     <footer>
         <div class="footer-content">
             <div class="footer-section about">
                 <h3>Sobre Nós</h3>
                 <p>O Coletivo de Mulheres "Elas por Elas" é dedicado a promover a união, o empoderamento e a saúde mental feminina em Assis Chateaubriand e região.</p>
-            </div>
-            <div class="footer-section quick-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pesquisas.html">Pesquisas</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="informacoes.html">Informações</a></li>
-                    <li><a href="curiosidades.html">Curiosidades</a></li>
-                    <li><a href="comunidade.html">Comunidade</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                </ul>
             </div>
             <div class="footer-section contact">
                 <h3>Contato</h3>
@@ -140,12 +147,11 @@
             <div class="footer-section social">
                 <h3>Siga-nos</h3>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/elasporelas_ifpr/" target="_blank" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i><span>Instagram</span>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100093049331240" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i><span>Facebook</span>
-                    </a>
+                    <p><a href="https://www.instagram.com/elasporelas_ifpr/">
+                        <img src="./imagem/image-insta.png" alt="">@elasporelas_ifpr</a></p>
+                   
+                    <p><a href="https://www.facebook.com/profile.php?id=100093049331240">
+                        <img src="./imagem/image-face.png" alt="">Coletivo de Mulheres 'elas por elas'</a></p>
                 </div>
             </div>
         </div>

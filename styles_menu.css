@@ -305,7 +305,7 @@ nav {
 }
 
 
-/* Footer Styles */
+/* Roda pé */
 footer {
     background-color: #4a1010; /* A darker shade of your theme color */
     color: #fff;
@@ -350,47 +350,29 @@ footer {
 }
 
 .footer-section p {
-    color: #d8b4b4; /* Lighter color for better readability on dark background */
+    color: #d8b4b4; 
     margin-bottom: 10px;
-    font-size: 0.95rem; /* Slightly smaller font for paragraphs */
+    font-size: 0.95rem; 
 }
 
-.footer-section.contact p i {
-    margin-right: 10px;
-    color: #FFD700; /* Consistent icon color */
-}
 
 .footer-section.social .social-links {
-    margin-top: 20px; /* Increased margin */
+    margin-top: 20px; 
     display: flex;
-    justify-content: flex-start; /* Align icons to the left */
-    gap: 15px; /* Space between icons */
+    justify-content: flex-start; 
+    gap: 15px; 
 }
 
-.footer-section.social .social-links a {
-    color: #fff;
-    font-size: 1.8rem;
-    background-color: #6C2D2D; /* Background for icons */
-    width: 40px; /* Fixed width */
-    height: 40px; /* Fixed height */
-    line-height: 40px; /* Center icon vertically */
-    border-radius: 50%; /* Circular shape */
-    display: inline-flex; /* Use flex for centering content */
-    justify-content: center; /* Center icon horizontally */
-    align-items: center; /* Center icon vertically */
-    border: 1px solid #ffffff; /* Gold border */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Subtle shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
-}
+
 
 .footer-section.social .social-links a:hover {
-    background-color: #ffffff; /* Highlight on hover */
-    color: #4a1010; /* Darker text on hover */
-    transform: translateY(-3px); /* Lift effect */
+    background-color: #ffffff; 
+    color: #4a1010; 
+    transform: translateY(-3px); 
 }
 
 .footer-section.social .social-links a span {
-    display: none; /* Hide text for social icons on desktop */
+    display: none; 
 }
 
 .footer-section.quick-links ul {
@@ -416,11 +398,22 @@ footer {
 
 
 .footer-bottom {
-    margin-top: 30px; /* Increased margin */
-    padding-top: 25px; /* Increased padding */
-    font-size: 1rem; /* Slightly larger font */
-    border-top: 2px solid #6C2D2D; /* Stronger border */
-    color: #e0e0e0; /* Lighter color */
+    margin-top: 30px; 
+    padding-top: 25px; 
+    font-size: 1rem;
+    border-top: 2px solid #6C2D2D;
+    color: #e0e0e0; 
+}
+
+footer p{
+    margin: 0; 
+    text-decoration: none;
+}
+
+footer img {
+    vertical-align: middle;
+    margin-right: 5px; 
+    width: 30px;
 }
 
 
@@ -431,12 +424,6 @@ footer {
         align-items: center;
     }
 
-    .footer-section {
-        text-align: center;
-        margin: 15px 0;
-        border-left: none; /* Remove left border on mobile */
-        padding-left: 0; /* Remove padding */
-    }
 
     .footer-section.social .social-links {
         justify-content: center; /* Center icons on mobile */
