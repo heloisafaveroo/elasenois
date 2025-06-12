@@ -59,8 +59,13 @@ body {
     font-size: 14px;
 }
 
+.normal{
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 /* Header e navegação - FUNDO BRANCO */
-header {
+.andante{
     background-color: white !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky; /* Add this line */
@@ -221,6 +226,29 @@ nav {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+/* Estilos para o ícone de seta no menu mobile */
+.mobile-menu .dropdown .dropbtn .arrow-icon {
+    display: inline-block; /* Permite transformações */
+    margin-left: 8px; /* Espaço entre o texto e o ícone */
+    transition: transform 0.3s ease; /* Transição suave para a rotação */
+}
+
+/* Ícone padrão (seta para baixo) */
+.mobile-menu .dropdown .dropbtn .arrow-icon::after {
+    content: '\25BC'; /* Caractere Unicode para seta para baixo (▼) */
+    font-family: 'Font Awesome 5 Free'; /* Se usar Font Awesome */
+    font-weight: 900; /* Para ícones sólidos do Font Awesome */
+    /* Ou, se não usar Font Awesome: */
+    /* content: '▼'; */
+}
+
+/* Ícone quando o dropdown está aberto (seta para cima) */
+.mobile-menu .dropdown.active .dropbtn .arrow-icon::after {
+    content: '\25B2'; /* Caractere Unicode para seta para cima (▲) */
+    /* Ou, se usar Font Awesome: */
+    /* content: '\f0d8'; */ /* Código Font Awesome para caret-up */
+    transform: rotate(180deg); /* Opcional: rotação para efeito */
+}
 
 /* Media queries */
 @media (max-width: 768px) {
@@ -276,28 +304,147 @@ nav {
     }
 }
 
-/* Estilos para o ícone de seta no menu mobile */
-.mobile-menu .dropdown .dropbtn .arrow-icon {
-    display: inline-block; /* Permite transformações */
-    margin-left: 8px; /* Espaço entre o texto e o ícone */
-    transition: transform 0.3s ease; /* Transição suave para a rotação */
+
+/* Footer Styles */
+footer {
+    background-color: #4a1010; /* A darker shade of your theme color */
+    color: #fff;
+    padding-top: 50px; /* Increased padding */
+    padding-bottom: 50px; /* Increased padding */
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    border-top: 5px solid #6C2D2D; /* Solid border top */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2); /* Subtle shadow */
 }
 
-/* Ícone padrão (seta para baixo) */
-.mobile-menu .dropdown .dropbtn .arrow-icon::after {
-    content: '\25BC'; /* Caractere Unicode para seta para baixo (▼) */
-    font-family: 'Font Awesome 5 Free'; /* Se usar Font Awesome */
-    font-weight: 900; /* Para ícones sólidos do Font Awesome */
-    /* Ou, se não usar Font Awesome: */
-    /* content: '▼'; */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Changed to space-evenly */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px; /* Increased padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Softer border */
 }
 
-/* Ícone quando o dropdown está aberto (seta para cima) */
-.mobile-menu .dropdown.active .dropbtn .arrow-icon::after {
-    content: '\25B2'; /* Caractere Unicode para seta para cima (▲) */
-    /* Ou, se usar Font Awesome: */
-    /* content: '\f0d8'; */ /* Código Font Awesome para caret-up */
-    transform: rotate(180deg); /* Opcional: rotação para efeito */
+.footer-section {
+    flex: 1;
+    min-width: 280px; /* Increased min-width */
+    margin: 25px; /* Adjusted margin */
+    text-align: left;
+    border-left: 3px solid #6C2D2D; /* Added decorative border */
+    padding-left: 15px; /* Padding for the border */
+    border-radius: 5px; /* Slightly rounded corners */
 }
 
+.footer-section h3 {
+    color: #ffe7e7; /* A contrasting accent color, like gold */
+    margin-bottom: 20px; /* Increased margin */
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: 600;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Letter spacing */
+}
+
+.footer-section p {
+    color: #d8b4b4; /* Lighter color for better readability on dark background */
+    margin-bottom: 10px;
+    font-size: 0.95rem; /* Slightly smaller font for paragraphs */
+}
+
+.footer-section.contact p i {
+    margin-right: 10px;
+    color: #FFD700; /* Consistent icon color */
+}
+
+.footer-section.social .social-links {
+    margin-top: 20px; /* Increased margin */
+    display: flex;
+    justify-content: flex-start; /* Align icons to the left */
+    gap: 15px; /* Space between icons */
+}
+
+.footer-section.social .social-links a {
+    color: #fff;
+    font-size: 1.8rem;
+    background-color: #6C2D2D; /* Background for icons */
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+    line-height: 40px; /* Center icon vertically */
+    border-radius: 50%; /* Circular shape */
+    display: inline-flex; /* Use flex for centering content */
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
+    border: 1px solid #ffffff; /* Gold border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.footer-section.social .social-links a:hover {
+    background-color: #ffffff; /* Highlight on hover */
+    color: #4a1010; /* Darker text on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+.footer-section.social .social-links a span {
+    display: none; /* Hide text for social icons on desktop */
+}
+
+.footer-section.quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.quick-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section.quick-links ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-section.quick-links ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    margin-top: 30px; /* Increased margin */
+    padding-top: 25px; /* Increased padding */
+    font-size: 1rem; /* Slightly larger font */
+    border-top: 2px solid #6C2D2D; /* Stronger border */
+    color: #e0e0e0; /* Lighter color */
+}
+
+
+@media (max-width: 768px) {
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 15px 0;
+        border-left: none; /* Remove left border on mobile */
+        padding-left: 0; /* Remove padding */
+    }
+
+    .footer-section.social .social-links {
+        justify-content: center; /* Center icons on mobile */
+    }
+
+    .footer-section.social .social-links a span {
+        display: inline-block; /* Show text for social icons on mobile */
+        margin-left: 8px; /* Space between icon and text */
+    }
+}
 
