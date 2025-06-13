@@ -1,300 +1,131 @@
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 180px);
-    padding: 20px;
-    background: linear-gradient(135deg, #fce7e7 0%, #f8d7da 50%, #f5c6cb 100%);
-}
-
-.container {
-    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    max-width: 1000px;
-    width: 100%;
+    max-width: 900px;
     margin: 20px auto;
-    border: 3px solid #e6cbcb;
-    position: relative;
-    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
-}
-
-.container::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(108, 45, 45, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.container:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(134, 8, 8, 0.2);
-    border-color: #811d1d;
-}
-
-.container h1 {
-    color: #5e0a0a;
-    font-size: 3em;
-    margin-bottom: 25px;
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 1;
-}
-
-.container p {
-    font-size: 1.3em;
-    color: #555;
-    margin-bottom: 40px;
-    line-height: 1.8;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 1;
-}
-
-/* Seção de benefícios */
-.benefits-section {
-    margin: 40px 0;
-    position: relative;
-    z-index: 1;
-}
-
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin: 30px 0;
-}
-
-.benefit-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(92, 25, 25, 0.1);
-    transition: all 0.3s ease;
-    border-left: 4px solid #6C2D2D;
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(92, 25, 25, 0.15);
-}
-
-.benefit-card h3 {
-    color: #5c1919;
-    font-size: 1.3em;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.benefit-card p {
-    font-size: 1em;
-    color: #666;
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Seção de depoimentos */
-.testimonials-section {
-    margin: 50px 0;
-    position: relative;
-    z-index: 1;
-}
-
-.testimonials-section h2 {
-    color: #5e0a0a;
-    font-size: 2.2em;
+section {
     margin-bottom: 30px;
-    font-weight: 600;
+    padding: 15px;
 }
 
-.testimonial {
-    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-    padding: 30px;
-    border-radius: 15px;
-    margin: 20px 0;
-    box-shadow: 0 8px 25px rgba(92, 25, 25, 0.08);
-    border-left: 5px solid #6C2D2D;
-    font-style: italic;
-    position: relative;
+h2 {
+    color: #d81b60; /* Tom de rosa mais escuro para títulos */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
 }
 
-.testimonial::before {
-    content: '"';
-    font-size: 4em;
-    color: #6C2D2D;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    opacity: 0.3;
+p {
+    text-align: justify;
+    margin-bottom: 10px;
 }
 
-.testimonial p {
-    font-size: 1.1em;
-    color: #444;
-    margin-bottom: 15px;
-    padding-left: 30px;
+ul {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+    margin-left: 20px;
 }
 
-.testimonial-author {
-    font-weight: bold;
-    color: #5c1919;
-    text-align: right;
-    font-style: normal;
-    font-size: 0.9em;
+ul li {
+    background-color: #fff8e1; /* Fundo amarelo claro para itens de lista */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid #ffab40; /* Linha laranja na esquerda */
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* WhatsApp Button */
+/* Estilo do Botão WhatsApp */
 .whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    background: linear-gradient(45deg, #25D366, #128C7E);
+    display: block; /* Ocupa a largura total */
+    width: fit-content; /* Largura se ajusta ao conteúdo */
+    margin: 30px auto 20px auto; /* Centraliza o botão */
+    padding: 15px 30px;
+    background-color: #25d366; /* Cor verde do WhatsApp */
     color: white;
-    padding: 20px 40px;
-    border-radius: 50px;
     text-decoration: none;
+    font-size: 1.5em;
     font-weight: bold;
-    font-size: 1.4em;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-    gap: 15px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.whatsapp-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.whatsapp-button:hover::before {
-    left: 100%;
+    border-radius: 50px; /* Borda bem arredondada */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .whatsapp-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-    background: linear-gradient(45deg, #128c78, #25D366);
+    background-color: #1da851; /* Verde mais escuro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de "levantar" */
+}
+
+.whatsapp-button:active {
+    transform: translateY(0); /* Retorna ao estado normal ao clicar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícone do WhatsApp junto ao botão */
+.whatsapp-icon-note {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: -10px; /* Ajusta a proximidade com o botão */
 }
 
 .whatsapp-icon {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     vertical-align: middle;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+    margin-right: 5px;
 }
 
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Linha Divisória */
+hr {
+    border: none;
+    border-top: 1px solid #ffccbc; /* Cor suave para a linha divisória */
+    margin: 40px 0;
 }
 
-.container > * {
-    animation: fadeInUp 0.6s ease forwards;
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #e91e63;
+    color: white;
+    font-size: 0.9em;
 }
 
-.container > *:nth-child(2) { animation-delay: 0.1s; }
-.container > *:nth-child(3) { animation-delay: 0.2s; }
-.container > *:nth-child(4) { animation-delay: 0.3s; }
-.container > *:nth-child(5) { animation-delay: 0.4s; }
-
-/* Responsive adjustments */
+/* Responsividade Básica */
 @media (max-width: 768px) {
-    .container {
-        padding: 40px 25px;
-    }
-
-    .container h1 {
-        font-size: 2.5em;
-    }
-
-    .container p {
-        font-size: 1.1em;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .testimonials-section h2 {
+    header h1 {
         font-size: 1.8em;
     }
-
-    .whatsapp-button {
-        padding: 18px 35px;
-        font-size: 1.2em;
+    main {
+        margin: 10px;
+        padding: 15px;
     }
-
-    .whatsapp-icon {
-        width: 30px;
-        height: 30px;
+    .whatsapp-button {
+        font-size: 1.2em;
+        padding: 12px 25px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 30px 20px;
+    header h1 {
+        font-size: 1.5em;
+        padding: 15px 10px;
     }
-
-    .container h1 {
-        font-size: 2em;
+    h2 {
+        font-size: 1.5em;
     }
-
-    .container p {
-        font-size: 1em;
+    ul li {
+        padding: 8px 10px;
     }
-
-    .benefit-card {
-        padding: 20px;
-    }
-
-    .testimonial {
-        padding: 25px;
-    }
-
     .whatsapp-button {
-        padding: 15px 30px;
-        font-size: 1.1em;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .whatsapp-icon {
-        width: 25px;
-        height: 25px;
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
