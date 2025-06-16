@@ -244,11 +244,12 @@ main {
 
 /* Seção CTA */
 .cta-section {
-    background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+    background: #8b3333 0%;
     color: white;
     text-align: center;
     padding: 20px 20px;
     margin: 60px 0 0 0;
+    border-radius: 32px;
 }
 
 .cta-section h2 {

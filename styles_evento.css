@@ -1,4 +1,4 @@
-
+/*Layout geral e estilo do contêiner*/
 main {
     margin: 0 auto;
     padding: 40px 20px;
@@ -25,7 +25,7 @@ main {
     height: 5px;
     background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
 }
-
+/*titulo*/
 .eventos h1 {
     text-align: center;
     color: #6C2D2D;
@@ -46,7 +46,7 @@ main {
     background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
     border-radius: 2px;
 }
-
+/*eventos individuais */
 .item-evento {
     margin-bottom: 60px;
     padding: 30px;
@@ -62,7 +62,7 @@ main {
 .item-evento:hover::before {
     width: 100%;
 }
-
+/* informações do evento*/
 .info-evento {
     flex-grow: 1;
     flex-basis: 0;
@@ -86,7 +86,7 @@ main {
     color: #666;
     font-size: 16px;
 }
-
+/*dados de Eventos (horas/local)*/
 .evento-meta {
     display: flex;
     gap: 20px;
@@ -110,24 +110,7 @@ main {
     color: #912f2f;
 }
 
-.btn-saiba-mais {
-    background: linear-gradient(135deg, #912f2f 0%, #7a2525 100%);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(145, 47, 47, 0.3);
-}
-
-.btn-saiba-mais:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(145, 47, 47, 0.4);
-}
-
-/* Carousel Styles */
+/* Carrossel e estilo de imagem */
 .carousel-container {
     position: relative;
     overflow: hidden;
@@ -225,6 +208,7 @@ main {
 .next {
     right: 15px;
 }
+/*Contêineres de imagem dupla e única*/
 .doiscontainer {
     width: 40%;
 }
@@ -304,7 +288,10 @@ main {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-}
+} 
+.unicaimagem {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -327,11 +314,3 @@ main {
     }
 }
 
-
-
-
-@media (max-width: 768px) {
-    .unicaimagem {
-        width: 100%;
-    }
-}

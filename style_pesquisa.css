@@ -1,4 +1,4 @@
-
+/*Layout geral e estilo do contêiner*/
       main {
         margin: 0 auto;
         padding: 40px 20px;
@@ -27,7 +27,7 @@
         height: 5px;
         background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
 }
-
+/*titulo*/
     h2 {
          text-align: center;
         color: #6C2D2D;
@@ -86,7 +86,7 @@
         padding-left: 20px;
     }
 
-
+/*esterelizando link de cada artigo/pesquisa*/
     .link-item {
         background: linear-gradient(135deg, #faffff, #f7fdfd);
         border: 2px solid #e8f4f8;

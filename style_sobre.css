@@ -1,204 +1,201 @@
-
+/*Layout geral e estilo do contêiner*/
 main {
-    margin: 0 auto;
+    margin: 0px 60px;
     padding: 40px 20px;
 }
 
-        .noistodas {
-        max-width: 1200px;
-        background: white;
-        padding: 50px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(134, 8, 8, 0.1);
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        overflow: hidden;
-        margin-top: 20px;
-        }
+.noistodas {
+    max-width: 1200px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(134, 8, 8, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
 
-        .noistodas::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+.noistodas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+}
+/*titulo*/
+h2 {
+    text-align: center;
+    color: #6C2D2D;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
+}
+
+.sobre-projeto h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+.coordenadoras h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+.integrantes h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+/*sub titulos*/
+.titulozinho{
+    font-size: 1.7rem;
+    color: #6C2D2D;
+}
+/*começo do começo - */
+.sobreproj {
+    font-size: 1.2rem;
+    color: #555;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #8d1919;
+}
+/*imgem princ*/
+.sobre-projeto img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 25px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+/*coordenadoras e desenvolvedoras*/
+.membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.membro {
+    border: 2px solid #f0f0f0;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    border-color: #8d1919;
+}
+
+
+.membro img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #8d1919;
+}
+
+
+.membro h3 {
+    margin: 15px 0 10px 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.membro .fez {
+    font-style: italic;
+    color: #8d1919;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.membro p:last-child {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main{
+        padding: 20px 20px;
+        margin: 0 auto;
     }
 
-         h2 {
-            text-align: center;
-            color: #6C2D2D;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            position: relative;
-            font-weight: 600;
-        }
+    section {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
 
-        .sobre-projeto h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
-            border-radius: 2px;
-        }
+    section h2 {
+        font-size: 1.5rem;
+    }
 
-        .coordenadoras h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
-            border-radius: 2px;
-        }
+    .membros {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-        .integrantes h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
-            border-radius: 2px;
-        }
+    .membro {
+        padding: 20px;
+    }
 
-        p {
-            text-align: justify;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 
-        .sobreproj {
-            font-size: 1.2rem;
-            color: #555;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #8d1919;
-        }
+    .stat-number {
+        font-size: 2rem;
+    }
 
-        .sobre-projeto img {
-            max-width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-            margin: 25px auto;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
+    .noistodas{
+        padding: 15px;
+    }
+}
 
-        .membros {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
+@media (max-width: 480px) {
 
-        .membro {
-            border: 2px solid #f0f0f0;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
-
-        .membro:hover {
-            border-color: #8d1919;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(141, 25, 25, 0.1);
-        }
-
-        .membro img {
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 4px solid #8d1919;
-            transition: transform 0.3s ease;
-        }
-
-        .membro:hover img {
-            transform: scale(1.05);
-        }
-
-        .membro h3 {
-            margin: 15px 0 10px 0;
-            color: #333;
-            font-size: 1.3rem;
-        }
-
-        .membro .fez {
-            font-style: italic;
-            color: #8d1919;
-            margin-bottom: 15px;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .membro p:last-child {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            main{
-                padding: 20px 20px;
-            }
-
-            section {
-                padding: 20px;
-                margin-bottom: 25px;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            .membros {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .membro {
-                padding: 20px;
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .noistodas{
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            
-            .top-bar {
-                padding: 8px 15px;
-            }
-            
-            nav {
-                padding: 10px 15px;
-            }
-        }
+    
+    .top-bar {
+        padding: 8px 15px;
+    }
+    
+    nav {
+        padding: 10px 15px;
+    }
+}
