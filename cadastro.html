@@ -1,0 +1,39 @@
+<body>
+    <link rel="stylesheet" href="styles_cadastro.css">
+    <header class="normal">
+        <div class="top-bar">
+            <div class="social-icons">
+            </div>
+        </div>
+
+        </header>
+
+    <div id="cadastroModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>Receba Nossas Atualizações e Participe!</h1>
+            <p>Ao se cadastrar, você receberá por e-mail todas as novidades do nosso site, informações sobre eventos futuros, e conteúdos exclusivos do "Elas por Elas". Mantenha-se conectada e faça parte da nossa comunidade!</p>
+            
+            <form id="cadastroFormModal"> <div class="form-group">
+                    <label for="emailModal">E-mail:</label>
+                    <input type="email" id="emailModal" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordModal">Criar Senha:</label>
+                    <input type="password" id="passwordModal" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPasswordModal">Confirmar Senha:</label>
+                    <input type="password" id="confirmPasswordModal" name="confirm_password" required>
+                </div>
+                <button type="submit" class="submit-btn">Cadastrar</button>
+                <p id="messageModal" class="message"></p>
+            </form>
+        </div>
+    </div>
+
+        </main>
+    
+    <script src="script.js"></script>
+    <script src="script_modal_cadastro.js"></script> </body>
+</html>
