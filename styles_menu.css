@@ -23,21 +23,6 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: white;
-    font-size: 18px;
-    transition: opacity 0.3s ease;
-}
-
-.social-icons a:hover {
-    opacity: 0.8;
-}
-
 .participar {
     background-color: white;
     border: none;
@@ -305,39 +290,39 @@ footer {
     background-color: #4a1010;
     color: #fff;
     padding-top: 50px;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1rem;
     line-height: 1.6;
     text-align: center;
-    border-top: 5px solid #6C2D2D; 
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2); 
+    border-top: 5px solid #6C2D2D;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 40px; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-section {
     flex: 1;
-    min-width: 280px; 
-    margin: 25px; 
+    min-width: 280px;
+    margin: 25px;
     text-align: left;
     border-left: 3px solid #6C2D2D;
-    padding-left: 15px; 
-    border-radius: 5px; 
+    padding-left: 15px;
+    border-radius: 5px;
 }
 
 .footer-section h3 {
-    color: #ffe7e7; 
-    margin-bottom: 20px; 
+    color: #ffe7e7;
+    margin-bottom: 20px;
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -345,51 +330,67 @@ footer {
 }
 
 .footer-section p {
-    color: #d8b4b4; 
+    color: #d8b4b4;
     margin-bottom: 10px;
-    font-size: 0.95rem; 
+    font-size: 0.95rem;
 }
 
-
+/* This is the key change for the social links */
 .footer-section.social .social-links {
-    margin-top: 20px; 
+    margin-top: 20px;
     display: flex;
-    justify-content: flex-start; 
-    gap: 15px; 
+    flex-direction: column; /* Always stack them in a column */
+    justify-content: flex-start;
+    gap: 15px; /* Space between the links */
+}
+
+/* Style for the social links themselves */
+.footer-section.social .social-links a {
+    color: #d8b4b4; /* Link color */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Make the links themselves flex containers to align icon and text */
+    align-items: center; /* Vertically center the icon and text */
+    font-size: 0.95rem;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-section.social .social-links a:hover {
+    color: #fff; /* White color on hover */
 }
 
 .footer-bottom {
-    margin-top: 30px; 
-    padding-top: 25px; 
+    margin-top: 30px;
+    padding-top: 25px;
     font-size: 1rem;
     border-top: 2px solid #6C2D2D;
-    color: #e0e0e0; 
+    color: #e0e0e0;
 }
-
-
 
 footer img {
     vertical-align: middle;
-    margin-right: 5px; 
+    margin-right: 8px; /* Margin for spacing between image and text */
     width: 30px;
 }
 
-
 @media (max-width: 768px) {
-
     .footer-content {
         flex-direction: column;
         align-items: center;
     }
 
+    .footer-section {
+        text-align: center; /* Center align text for smaller screens */
+        border-left: none; /* Remove left border on small screens */
+        padding-left: 0; /* Remove left padding on small screens */
+    }
 
     .footer-section.social .social-links {
-        justify-content: center; 
+        /* On smaller screens, you might still want to keep the links centered if the section itself is centered */
+        justify-content: center;
     }
 
     .footer-section.social .social-links a span {
-        display: inline-block; 
-        margin-left: 8px; 
+        display: inline-block;
+        margin-left: 8px;
     }
 }
-
