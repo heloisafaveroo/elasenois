@@ -294,11 +294,6 @@ main {
 }
 
 @media (max-width: 480px) {
-    .top-bar {
-        padding: 10px;
-        flex-direction: column;
-        gap: 10px;
-    }
 
     .eventos h1 {
         font-size: 28px;

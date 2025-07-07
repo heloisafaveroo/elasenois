@@ -71,6 +71,10 @@
         padding-bottom: 10px;
     }
 
+    footer h3 {
+        border-bottom: none;
+    }
+
     h4 {
         color: #5c1919;
         font-size: 1.2em;
