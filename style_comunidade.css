@@ -113,12 +113,17 @@ p {
 @media (max-width: 768px) {
     main {
         margin: 0 auto;
-         padding: 20px 20px;
+         padding: 20px 9px;
     }
     .whatsapp-button {
         font-size: 1.2em;
         padding: 12px 25px;
     }
+
+    .partic{
+    padding: 29px;
+}
+    
 }
 
 @media (max-width: 480px) {
