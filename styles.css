@@ -129,6 +129,8 @@ p {
 .card-content {
     padding: 30px;
 }
+
+
 /*títulos dentro dos cards*/
 .card h3 {
     color: #5c1919;
@@ -196,5 +198,21 @@ p {
     .objetivos {
         padding: 60px 15px;
     }
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    margin: 40px auto; /* Adicionado para centralizar e dar espaçamento */
+}
+
+.container h1, .container h2 { /* Ajustado para afetar apenas os H1/H2 dentro do container de depoimentos */
+    text-align: center;
+    color: #333; /* Cor mais neutra para o título do depoimento */
+    margin-bottom: 20px;
 }
 

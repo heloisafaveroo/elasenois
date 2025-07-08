@@ -366,7 +366,7 @@ main {
     }
     
     .info-section {
-        padding: 0 15px;
+        padding: 5px 0px;
     }
     
     .info-card, .link-card {
@@ -375,10 +375,6 @@ main {
     
     .section-header h2 {
         font-size: 1.5rem;
-    }
-    
-    .cta-section {
-        padding: 40px 15px;
     }
     
     .cta-section h2 {
