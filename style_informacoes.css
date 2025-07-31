@@ -65,7 +65,15 @@ main {
     display: inline-block;
 }
 
-.section-header h2::after {
+.section-header h3 {
+    opacity: 0.8;
+    margin-top: -23px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-header h3::after {
     content: '';
     position: absolute;
     bottom: -10px;
