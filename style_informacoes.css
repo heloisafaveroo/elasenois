@@ -3,7 +3,7 @@ main {
     margin: 0 auto;
     padding: 40px 20px;
 }
-.total{
+.total, .comeco{
     background: white;
     padding: 50px;
     border-radius: 15px;
@@ -32,11 +32,25 @@ main {
 }
 
 .hero-info h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    color: #6C2D2D;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
 }
+
+    .hero-info h1::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+        border-radius: 2px;
+    }
 
 .hero-info p {
     font-size: 1.2rem;
@@ -59,11 +73,12 @@ main {
 
 .section-header h2 {
     color: #6C2D2D;
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
 }
+
 
 .section-header h3 {
     opacity: 0.8;
