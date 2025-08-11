@@ -46,6 +46,78 @@ h2 {
     background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
     border-radius: 2px;
 }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* estiliza cada card individualmente.*/
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 7px 9px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #7d4747;
+    margin-top: 20px;
+}
+
+.card-content {
+    padding: 20px;
+    height: 100%;
+    background-color: rgb(254, 244, 247);
+}
+
+
+
+.sub-bloco {
+    position: relative;
+    /* background-color: blue; */
+    width: 600px;
+    height: 200px;
+    margin-left: 160px;
+}
+
+.sub-bloco p, .bloco-principal p {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* margin: 12px 0 12px 0; */
+    padding: 12px;
+    border: 3px solid black;
+    border-radius: 12px;
+    height: 70%;
+}
+
+.sub-bloco::before {
+    content: '';
+    position: absolute;
+    transform: translateX(-100%);
+    /* background-color: orange; */
+    width: 80px;
+    height: 50%;
+    border-width: 0 0 4px 4px;
+    border-style: solid;
+    border-color: black;
+}
+
+.sub-bloco::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    transform: translate(-100%, 100%);
+    /* background-color: orange; */
+    width: 80px;
+    height: 50%;
+    border-width: 0 0 0 4px;
+    border-style: solid;
+    border-color: black;
+}
+
+
+
 
 .coordenadoras h2::after {
     content: '';
