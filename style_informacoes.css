@@ -40,17 +40,17 @@ main {
     font-weight: 600;
 }
 
-    .hero-info h1::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
-        border-radius: 2px;
-    }
+.hero-info h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
 
 .hero-info p {
     font-size: 1.2rem;
@@ -169,7 +169,11 @@ main {
     font-size: 1rem;
     line-height: 1.6;
 }
-
+#ciclo img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
 /* Card de emergência */
 .info-card.emergency {
     background: linear-gradient(135deg, #ff4757, #ff3742);
