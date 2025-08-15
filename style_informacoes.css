@@ -108,6 +108,12 @@ main {
     margin-bottom: 40px;
 }
 
+
+.text-content {
+    flex: 2; /* Ocupa duas partes do espaço disponível */
+}
+
+
 /* Cards de informação */
 .info-card {
     background: white;
@@ -168,6 +174,42 @@ main {
     margin-bottom: 15px;
     font-size: 1rem;
     line-height: 1.6;
+}
+/*conteiner do ciclo de violçencia - class própria*/
+.container {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px;
+}
+
+.text-content {
+    flex: 2; /* Ocupa duas partes do espaço disponível */
+}
+
+.image-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e a legenda em uma coluna */
+    align-items: center; 
+}
+
+.image-container img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.image-caption {
+    font-size: 0.8em; /* Tamanho da fonte menor para a legenda */
+    color: #555; /* Cor da fonte mais suave */
+    text-align: center; /* Centraliza o texto da legenda */
+    margin-top: 5px; /* Espaço entre a imagem e a legenda */
+}
+
+/* Opcional: Estilos para responsividade em telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empilha os elementos em telas pequenas */
+    }
 }
 #ciclo img {
     width: 100%;
