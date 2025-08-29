@@ -84,7 +84,7 @@ p {
 .card-content {
     padding: 20px;
     height: 100%;
-    background-color: rgb(252, 239, 243);
+    background-color: rgba(240, 195, 195, 0.171);
 }
 /*títulos dentro dos cards*/
 .card h4 {

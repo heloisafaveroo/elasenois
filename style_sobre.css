@@ -61,7 +61,6 @@ h2 {
     transition: all 0.3s ease;
     border: 2px solid #7d4747;
     margin-top: 20px;
-    margin-left: 43px;
 }
 
 .cardsolo{
@@ -70,54 +69,14 @@ h2 {
     box-shadow: 0 7px 9px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     border: 2px solid #7d4747;
-    margin-top: 20px;
+
 }
 .card-content {
     padding: 20px;
     height: 100%;
-    background-color: rgb(254, 244, 247);
+    background-color: rgba(255, 239, 239, 0.562);
     
 }
-
-
-/* Container principal para o posicionamento da linha */
-.sobre-projeto {
-    position: relative; /* Torna este elemento o ponto de referência para a linha */
-    padding-left: 50px; /* Adiciona um espaço à esquerda para a linha não ficar sobre o texto */
-}
-
-/* Ajusta as margens dos cards para que se alinhem após o padding */
-.cardsolo, .card {
-    margin-left: 0;
-    position: relative; /* Define cada card como ponto de referência para seu próprio círculo */
-}
-
-/* 1. Cria a linha vertical que conecta todos os blocos */
-.sobre-projeto::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25px; /* Posição da linha em relação à borda esquerda do container */
-    height: 100%; /* A linha terá a altura total da seção */
-    width: 2px;
-    background-color: #8c4e4e; /* Cor da linha */
-}
-
-/* 2. Cria os círculos que se conectam à linha em cada bloco */
-.cardsolo::before,
-.card::before {
-    content: '';
-    position: absolute;
-    top: 25px; /* Ajuste vertical para o círculo, centralizando-o */
-    left: -27px; /* Move o círculo para a esquerda, para que ele fique sobre a linha */
-    width: 12px;
-    height: 12px;
-    background-color: #8c4e4e; /* Cor do círculo */
-    border-radius: 50%; /* Transforma o elemento em um círculo */
-    z-index: 1; /* Garante que o círculo fique por cima da linha */
-}
-
-
 
 .coordenadoras h2::after {
     content: '';
