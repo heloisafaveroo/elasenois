@@ -268,11 +268,11 @@ p {
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
     .depoimentos-container {
-        padding: 15px;
+        padding: 20px;
     }
 
     .depoimento {
-        padding: 15px;
+        padding: 20px;
     }
 }
 

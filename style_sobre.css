@@ -40,27 +40,11 @@ h2 {
     content: '';
     position: absolute;
     bottom: -15px;
-    left: 50%;
+    left: 46%;
     width: 80px;
     height: 3px;
     background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
     border-radius: 2px;
-}
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-/* estiliza cada card individualmente.*/
-.card {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 7px 9px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 2px solid #7d4747;
-    margin-top: 20px;
 }
 
 .cardsolo{
@@ -68,15 +52,52 @@ h2 {
     overflow: hidden;
     box-shadow: 0 7px 9px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    border: 2px solid #7d4747;
+    border: 2px solid #ffd9d9;
 
 }
+
 .card-content {
     padding: 20px;
     height: 100%;
-    background-color: rgba(255, 239, 239, 0.562);
+    background-color: rgba(255, 255, 255, 0.562);
     
 }
+/* Estilo para a caixa principal do accordion */
+details {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que o conteúdo fique dentro dos cantos arredondados */margin-top: 13px;
+}
+
+/* Estilo para o marcador personalizado e o título */
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 18px 24px 18px 50px;
+    background-color: #ffd9d9;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    list-style: none;
+    position: relative;
+    
+}
+
+/* Animação do marcador quando o accordion está aberto */
+details[open] summary::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.content {
+            padding: 20px 24px;
+            color: #555;
+            line-height: 1.6;}
+
+
 
 .coordenadoras h2::after {
     content: '';
@@ -132,6 +153,7 @@ p {
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
+
 /*coordenadoras e desenvolvedoras*/
 .membros {
     display: grid;
@@ -193,7 +215,7 @@ p {
     }
 
     section h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .membros {
@@ -217,7 +239,10 @@ p {
     .noistodas{
         padding: 15px;
     }
+
+
 }
+
 
 @media (max-width: 480px) {
 
