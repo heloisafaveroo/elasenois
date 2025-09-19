@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Elas por Elas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fce7e7 0%, #f8d7da 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Tela de Login */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(92, 25, 25, 0.15);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+        }
+
+        .admin-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5c1919 0%, #6C2D2D 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .login-header h1 {
+            color: #5c1919;
+            font-size: 1.8rem;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5c1919;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #6C2D2D;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(108, 45, 45, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 45, 45, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 45, 45, 0.4);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .voltar-home {
+            margin-top: 20px;
+        }
+
+        .voltar-home a {
+            color: #6C2D2D;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .voltar-home a:hover {
+            text-decoration: underline;
+        }
+
+        /* Painel Admin */
+        .admin-panel {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .admin-header h1 {
+            color: #5c1919;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+        }
+
+        .admin-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .info-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .btn-logout {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-logout:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+        }
+
+        /* Tabela de usuários */
+        .usuarios-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .usuarios-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .usuarios-header h2 {
+            color: #5c1919;
+            font-size: 1.5rem;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 250px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #6C2D2D;
+        }
+
+        .btn-export {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-export:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .usuarios-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .usuarios-table th,
+        .usuarios-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .usuarios-table th {
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .usuarios-table tbody tr:hover {
+            background-color: #fafafa;
+        }
+
+        .usuarios-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-ativo {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+        .no-users {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #6C2D2D;
+            color: white;
+            border-color: #6C2D2D;
+        }
+
+        .pagination button.active {
+            background: #6C2D2D;
+            color: white;
+            border-color: #6C2D2D;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Modal de confirmação */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            color: #5c1919;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn-confirm {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .admin-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .admin-info {
+                justify-content: center;
+            }
+
+            .usuarios-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .usuarios-table th,
+            .usuarios-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="admin-icon">👩‍💼</div>
+                <h1>Painel Administrativo</h1>
+                <p>Acesso restrito para administradoras</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="senhaAdmin">Senha de Administradora:</label>
+                    <input type="password" id="senhaAdmin" class="form-input" placeholder="Digite a senha" required>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+                <div class="error-message" id="loginError">Senha incorreta!</div>
+            </form>
+
+            <div class="voltar-home">
+                <a href="index.html">← Voltar para a página inicial</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Painel Admin -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <div>
+                <h1>Painel Administrativo</h1>
+                <p>Gerenciar usuários cadastrados</p>
+            </div>
+            
+            <div class="admin-info">
+                <div class="info-card">
+                    <h3 id="totalUsuarios">0</h3>
+                    <p>Total de Usuários</p>
+                </div>
+                <div class="info-card">
+                    <h3 id="usuariosHoje">0</h3>
+                    <p>Cadastros Hoje</p>
+                </div>
+                <button class="btn-logout" onclick="logout()">Sair</button>
+            </div>
+        </div>
+
+        <div class="usuarios-container">
+            <div class="usuarios-header">
+                <h2>Usuários Cadastrados</h2>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Buscar por e-mail...">
+                    <button class="btn-export" onclick="exportarCSV()">📊 Exportar CSV</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="usuarios-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>E-mail</th>
+                            <th>Data de Cadastro</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuariosTableBody">
+                        <!-- Os dados serão inseridos aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Paginação será inserida aqui via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirmar Exclusão</h3>
+            <p id="confirmMessage">Tem certeza que deseja excluir este usuário?</p>
+            <div class="modal-buttons">
+                <button class="btn-confirm" onclick="confirmarExclusao()">Excluir</button>
+                <button class="btn-cancel" onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configurações
+        const SENHA_ADMIN = "elasporelas2025"; // Altere esta senha
+        const USUARIOS_POR_PAGINA = 10;
+
+        // Variáveis globais
+        let usuariosOriginais = [];
+        let usuariosFiltrados = [];
+        let paginaAtual = 1;
+        let usuarioParaExcluir = null;
+
+        // Elementos DOM
+        const loginScreen = document.getElementById('loginScreen');
+        const adminPanel = document.getElementById('adminPanel');
+        const loginForm = document.getElementById('loginForm');
+        const senhaAdmin = document.getElementById('senhaAdmin');
+        const loginError = document.getElementById('loginError');
+        const searchInput = document.getElementById('searchInput');
+        const usuariosTableBody = document.getElementById('usuariosTableBody');
+        const totalUsuarios = document.getElementById('totalUsuarios');
+        const usuariosHoje = document.getElementById('usuariosHoje');
+        const confirmModal = document.getElementById('confirmModal');
+        const confirmMessage = document.getElementById('confirmMessage');
+        const pagination = document.getElementById('pagination');
+
+        // Login
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (senhaAdmin.value === SENHA_ADMIN) {
+                loginScreen.style.display = 'none';
+                adminPanel.style.display = 'block';
+                carregarDados();
+            } else {
+                loginError.style.display = 'block';
+                senhaAdmin.value = '';
+                setTimeout(() => {
+                    loginError.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        // Busca em tempo real
+        searchInput.addEventListener('input', function() {
+            const termo = this.value.toLowerCase().trim();
+            
+            if (termo === '') {
+                usuariosFiltrados = [...usuariosOriginais];
+            } else {
+                usuariosFiltrados = usuariosOriginais.filter(usuario =>
+                    usuario.email.toLowerCase().includes(termo)
+                );
+            }
+            
+            paginaAtual = 1;
+            renderizarTabela();
+            renderizarPaginacao();
+        });
+
+        // Carregar dados
+        function carregarDados() {
+            usuariosOriginais = JSON.parse(localStorage.getItem('usuariosCadastrados') || '[]');
+            usuariosFiltrados = [...usuariosOriginais];
+            
+            atualizarEstatisticas();
+            renderizarTabela();
+            renderizarPaginacao();
+        }
+
+        // Atualizar estatísticas
+        function atualizarEstatisticas() {
+            totalUsuarios.textContent = usuariosOriginais.length;
+            
+            const hoje = new Date().toDateString();
+            const cadastrosHoje = usuariosOriginais.filter(usuario => {
+                const dataCadastro = new Date(usuario.dataCadastro).toDateString();
+                return dataCadastro === hoje;
+            }).length;
+            
+            usuariosHoje.textContent = cadastrosHoje;
+        }
+
+        // Renderizar tabela
+        function renderizarTabela() {
+            const inicio = (paginaAtual - 1) * USUARIOS_POR_PAGINA;
+            const fim = inicio + USUARIOS_POR_PAGINA;
+            const usuariosPagina = usuariosFiltrados.slice(inicio, fim);
+
+            if (usuariosPagina.length === 0) {
+                usuariosTableBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="no-users">
+                            ${usuariosFiltrados.length === 0 && searchInput.value ? 
+                              'Nenhum usuário encontrado para esta busca.' : 
+                              'Nenhum usuário cadastrado ainda.'}
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            usuariosTableBody.innerHTML = usuariosPagina.map((usuario, index) => {
+                const numeroGlobal = inicio + index + 1;
+                const dataFormatada = formatarData(usuario.dataCadastro);
+                
+                return `
+                    <tr>
+                        <td>${numeroGlobal}</td>
+                        <td>${usuario.email}</td>
+                        <td>${dataFormatada}</td>
+                        <td><span class="status-badge status-ativo">Ativo</span></td>
+                        <td>
+                            <button class="btn-delete" onclick="confirmarExclusaoUsuario('${usuario.email}')">
+                                🗑️ Excluir
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Renderizar paginação
+        function renderizarPaginacao() {
+            const totalPaginas = Math.ceil(usuariosFiltrados.length / USUARIOS_POR_PAGINA);
+            
+            if (totalPaginas <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            
+            // Botão anterior
+            html += `<button onclick="mudarPagina(${paginaAtual - 1})" ${paginaAtual === 1 ? 'disabled' : ''}>‹ Anterior</button>`;
+            
+            // Números das páginas
+            for (let i = 1; i <= totalPaginas; i++) {
+                if (i === paginaAtual) {
+                    html += `<button class="active">${i}</button>`;
+                } else if (i === 1 || i === totalPaginas || (i >= paginaAtual - 2 && i <= paginaAtual + 2)) {
+                    html += `<button onclick="mudarPagina(${i})">${i}</button>`;
+                } else if (i === paginaAtual - 3 || i === paginaAtual + 3) {
+                    html += `<button disabled>...</button>`;
+                }
+            }
+            
+            // Botão próximo
+            html += `<button onclick="mudarPagina(${paginaAtual + 1})" ${paginaAtual === totalPaginas ? 'disabled' : ''}>Próximo ›</button>`;
+            
+            pagination.innerHTML = html;
+        }
+
+        // Mudar página
+        function mudarPagina(novaPagina) {
+            const totalPaginas = Math.ceil(usuariosFiltrados.length / USUARIOS_POR_PAGINA);
+            
+            if (novaPagina >= 1 && novaPagina <= totalPaginas) {
+                paginaAtual = novaPagina;
+                renderizarTabela();
+                renderizarPaginacao();
+            }
+        }
+
+        // Formatar data
+        function formatarData(dataISO) {
+            const data = new Date(dataISO);
+            const dia = data.getDate().toString().padStart(2, '0');
+            const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+            const ano = data.getFullYear();
+            const hora = data.getHours().toString().padStart(2, '0');
+            const minuto = data.getMinutes().toString().padStart(2, '0');
+            
+            return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
+        }
+
+        // Confirmar exclusão
+        function confirmarExclusaoUsuario(email) {
+            usuarioParaExcluir = email;
+            confirmMessage.textContent = `Tem certeza que deseja excluir o usuário: ${email}?`;
+            confirmModal.style.display = 'block';
+        }
+
+        // Executar exclusão
+        function confirmarExclusao() {
+            if (usuarioParaExcluir) {
+                usuariosOriginais = usuariosOriginais.filter(usuario => usuario.email !== usuarioParaExcluir);
+                localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosOriginais));
+                
+                // Atualizar dados filtrados
+                usuariosFiltrados = usuariosFiltrados.filter(usuario => usuario.email !== usuarioParaExcluir);
+                
+                // Ajustar página se necessário
+                const totalPaginas = Math.ceil(usuariosFiltrados.length / USUARIOS_POR_PAGINA);
+                if (paginaAtual > totalPaginas && totalPaginas > 0) {
+                    paginaAtual = totalPaginas;
+                }
+                
+                atualizarEstatisticas();
+                renderizarTabela();
+                renderizarPaginacao();
+                fecharModal();
+            }
+        }
+
+        // Fechar modal
+        function fecharModal() {
+            confirmModal.style.display = 'none';
+            usuarioParaExcluir = null;
+        }
+
+        // Exportar CSV
+        function exportarCSV() {
+            if (usuariosFiltrados.length === 0) {
+                alert('Não há dados para exportar.');
+                return;
+            }
+
+            let csv = 'Número,E-mail,Data de Cadastro,Status\n';
+            
+            usuariosFiltrados.forEach((usuario, index) => {
+                const dataFormatada = formatarData(usuario.dataCadastro);
+                csv += `${index + 1},"${usuario.email}","${dataFormatada}","Ativo"\n`;
+            });
+
+            // Download do arquivo
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `usuarios_elas_por_elas_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Tem certeza que deseja sair?')) {
+                loginScreen.style.display = 'flex';
+                adminPanel.style.display = 'none';
+                senhaAdmin.value = '';
+                searchInput.value = '';
+                paginaAtual = 1;
+            }
+        }
+
+        // Fechar modal clicando fora
+        window.onclick = function(event) {
+            if (event.target === confirmModal) {
+                fecharModal();
+            }
+        }
+
+        // Tecla ESC para fechar modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && confirmModal.style.display === 'block') {
+                fecharModal();
+            }
+        });
+
+        // Verificar se há dados ao carregar a página
+        window.addEventListener('load', function() {
+            const usuarios = JSON.parse(localStorage.getItem('usuariosCadastrados') || '[]');
+            if (usuarios.length === 0) {
+                console.log('Nenhum usuário cadastrado ainda. Cadastre alguns usuários primeiro na página de cadastro.');
+            }
+        });
+    </script>
+</body>
+</html>
