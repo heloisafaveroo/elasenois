@@ -289,14 +289,38 @@
                 padding: 30px 20px;
             }
         }
+            
+.btn-admin {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+    color: white;
+    border: none;
+    border-radius: 0; /* Alterado para 0 */
+    width: 120px; /* Largura alterada para retangular */
+    height: 40px; /* Altura alterada para retangular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(92, 25, 25, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-admin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(92, 25, 25, 0.4);
+}
     </style>
 </head>
 <body>
     <div class="cadastro-container">
         <div class="header-cadastro">
-            <div class="logo-cadastro">EP</div>
             <h1>Receber Atualizações</h1>
-            <p>Junte-se à nossa comunidade e receba todas as novidades sobre eventos e iniciativas</p>
+            <p>Junte-se ao nosso Coletivo e receba todas as novidades, informações, eventos e iniciativas</p>
         </div>
 
         <div class="form-container">
@@ -338,7 +362,7 @@
         <div class="modal-content">
             <div class="modal-icon">✓</div>
             <h2>Cadastro Realizado com Sucesso!</h2>
-            <p>Bem-vinda à comunidade "Elas por Elas"! Você receberá todas as atualizações sobre nossos eventos e iniciativas no e-mail cadastrado.</p>
+            <p>Bem-vinda ao Coletivo de Mulheres "Elas por Elas"! Você receberá todas as atualizações sobre novas informações, eventos e iniciativas no e-mail cadastrado.</p>
             <button class="btn-modal" onclick="fecharModal()">Continuar</button>
         </div>
     </div>
@@ -595,6 +619,8 @@
             }
         });
     </script>
-     <a href="admin.html">Administradora</a>
+            <a href="admin.html" class="btn-admin">
+                Administradora
+            </a>
 </body>
 </html>
