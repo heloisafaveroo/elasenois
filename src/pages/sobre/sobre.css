@@ -1,0 +1,257 @@
+/*Layout geral e estilo do contêiner*/
+main {
+    margin: 0px 60px;
+    padding: 40px 20px;
+}
+
+.noistodas {
+    max-width: 1200px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(134, 8, 8, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.noistodas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+}
+/*titulo*/
+h2 {
+    text-align: center;
+    color: #6C2D2D;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 600;
+}
+
+.sobre-projeto h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 46%;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+.cardsolo{
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 7px 9px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #ffd9d9;
+
+}
+
+.card-content {
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.562);
+    
+}
+/* Estilo para a caixa principal do accordion */
+details {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Garante que o conteúdo fique dentro dos cantos arredondados */margin-top: 13px;
+}
+
+/* Estilo para o marcador personalizado e o título */
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 18px 24px 18px 50px;
+    background-color: #ffd9d9;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    list-style: none;
+    position: relative;
+    
+}
+
+/* Animação do marcador quando o accordion está aberto */
+details[open] summary::before {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.content {
+            padding: 20px 24px;
+            color: #555;
+            line-height: 1.6;}
+
+
+
+.coordenadoras h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+.integrantes h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6C2D2D, #ad3c3c);
+    border-radius: 2px;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+/*sub titulos*/
+.titulozinho{
+    font-size: 1.7rem;
+    color: #6C2D2D;
+}
+/*começo do começo - */
+.sobreproj {
+    font-size: 1.2rem;
+    color: #555;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #8d1919;
+}
+/*imgem princ*/
+.sobre-projeto img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 25px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/*coordenadoras e desenvolvedoras*/
+.membros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.membro {
+    border: 2px solid #f0f0f0;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    border-color: #8d1919;
+}
+
+
+.membro img {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #8d1919;
+}
+
+
+.membro h3 {
+    margin: 15px 0 10px 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.membro .fez {
+    font-style: italic;
+    color: #8d1919;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.membro p:last-child {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main{
+        padding: 20px 10px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: 5px;
+        margin-bottom: 25px;
+    }
+
+    section h2 {
+        font-size: 1.7rem;
+    }
+
+    .membros {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .membro {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .noistodas{
+        padding: 15px;
+    }
+
+
+}
+
+
+@media (max-width: 480px) {
+
+    
+    .top-bar {
+        padding: 8px 15px;
+    }
+    
+    nav {
+        padding: 10px 15px;
+    }
+}

@@ -1,0 +1,446 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fce7e7 0%, #f8d7da 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Tela de Login */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(92, 25, 25, 0.15);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+        }
+
+        .admin-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5c1919 0%, #6C2D2D 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .login-header h1 {
+            color: #5c1919;
+            font-size: 1.8rem;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5c1919;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #6C2D2D;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(108, 45, 45, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 45, 45, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 45, 45, 0.4);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .voltar-home {
+            margin-top: 20px;
+        }
+
+        .voltar-home a {
+            color: #6C2D2D;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .voltar-home a:hover {
+            text-decoration: underline;
+        }
+
+        /* Painel Admin */
+        .admin-panel {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .admin-header h1 {
+            color: #5c1919;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+        }
+
+        .admin-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 150px;
+        }
+
+        .info-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .btn-logout {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-logout:hover {
+            background: #c82333;
+            transform: translateY(-1px);
+        }
+
+        /* Tabela de usuários */
+        .usuarios-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .usuarios-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .usuarios-header h2 {
+            color: #5c1919;
+            font-size: 1.5rem;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 250px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #6C2D2D;
+        }
+
+        .btn-export {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-export:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .usuarios-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .usuarios-table th,
+        .usuarios-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .usuarios-table th {
+            background: linear-gradient(135deg, #6C2D2D 0%, #5c1919 100%);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .usuarios-table tbody tr:hover {
+            background-color: #fafafa;
+        }
+
+        .usuarios-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-ativo {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+        .no-users {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #6C2D2D;
+            color: white;
+            border-color: #6C2D2D;
+        }
+
+        .pagination button.active {
+            background: #6C2D2D;
+            color: white;
+            border-color: #6C2D2D;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Modal de confirmação */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            color: #5c1919;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn-confirm {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .admin-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .admin-info {
+                justify-content: center;
+            }
+
+            .usuarios-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .usuarios-table th,
+            .usuarios-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
+        }
