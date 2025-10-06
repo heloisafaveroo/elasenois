@@ -41,7 +41,7 @@ const Comunidade = () => {
             <section className="partic">
                 <h2>Pronta para fazer parte?</h2>
                 <p className="simp">Não perca tempo! Clique no botão abaixo para entrar agora mesmo na nossa comunidade no WhatsApp e começar a se conectar com mulheres incríveis como você.</p>
-                <a href="https://chat.whatsapp.com/SEU_LINK_DO_GRUPO_AQUI" target="_blank" rel="noopener noreferrer" className="whatsapp-button">ENTRAR NA COMUNIDADE AGORA!</a>
+                <a href="https://chat.whatsapp.com/CGCPbPRTDS3A6UXCpWstae" target="_blank" rel="noopener noreferrer" className="whatsapp-button">ENTRAR NA COMUNIDADE AGORA!</a>
                 <p className="whatsapp-icon-note">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="Ícone do WhatsApp" className="whatsapp-icon" />
                     Entre agora mesmo!
