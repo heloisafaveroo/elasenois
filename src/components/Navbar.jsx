@@ -7,6 +7,10 @@ const Navbar = () => {
 
     const handleMenuToggle = () => {
         setMenuOpen(!menuOpen);
+        // Fecha o submenu de informações quando o menu principal é alternado
+        if (menuOpen) {
+            setInformacoesOpen(false);
+        }
     };
 
     const closeMenus = () => {
@@ -14,98 +18,30 @@ const Navbar = () => {
         setInformacoesOpen(false);
     };
 
-    // Adiciona o código JavaScript que você solicitou
+    const toggleInformacoes = (e) => {
+        e.preventDefault();
+        setInformacoesOpen(!informacoesOpen);
+    };
+
+    // Fecha os menus quando a janela é redimensionada para desktop
     useEffect(() => {
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const nav = document.querySelector('nav');
-
-        // Controle do menu hamburger
-        const handleHamburgerClick = () => {
-            mobileMenu.classList.toggle('open');
-            nav.classList.toggle('open');
-        };
-
-        // Fechar menu ao clicar fora
-        const handleClickOutside = (event) => {
-            const isClickInsideMenu = mobileMenu.contains(event.target) || hamburger.contains(event.target);
-            if (!isClickInsideMenu && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-                nav.classList.remove('open');
-                // Também atualiza o estado React
-                setMenuOpen(false);
-                setInformacoesOpen(false);
-            }
-        };
-
-        // Dropdown de "Informações" no menu mobile
-        const informacoesDropdownBtn = document.getElementById('informacoesDropdownBtn');
-        const informacoesDropdown = document.querySelector('.mobile-menu .dropdown');
-
-        const handleDropdownClick = (event) => {
-            event.preventDefault();
-            informacoesDropdown.classList.toggle('active');
-            // Atualiza o estado React
-            setInformacoesOpen(!informacoesOpen);
-
-            const closeDropdown = (e) => {
-                if (!informacoesDropdown.contains(e.target) && e.target !== informacoesDropdownBtn) {
-                    informacoesDropdown.classList.remove('active');
-                    setInformacoesOpen(false);
-                    document.removeEventListener('click', closeDropdown);
-                }
-            };
-
-            if (informacoesDropdown.classList.contains('active')) {
-                setTimeout(() => document.addEventListener('click', closeDropdown), 0);
-            } else {
-                document.removeEventListener('click', closeDropdown);
-            }
-
-            event.stopPropagation();
-        };
-
-        // Adiciona event listeners
-        if (hamburger) hamburger.addEventListener('click', handleHamburgerClick);
-        document.addEventListener('click', handleClickOutside);
-        if (informacoesDropdownBtn) informacoesDropdownBtn.addEventListener('click', handleDropdownClick);
-
-        // Fechar menus ao redimensionar a janela
         const handleResize = () => {
             if (window.innerWidth > 768) {
-                mobileMenu.classList.remove('open');
-                nav.classList.remove('open');
-                informacoesDropdown?.classList.remove('active');
-                // Atualiza os estados React
-                setMenuOpen(false);
-                setInformacoesOpen(false);
+                closeMenus();
             }
         };
 
         window.addEventListener('resize', handleResize);
-
-        // Fechar menus ao clicar em links (mobile)
-        const menuLinks = document.querySelectorAll('.mobile-menu a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                nav.classList.remove('open');
-                informacoesDropdown?.classList.remove('active');
-                // Atualiza os estados React
-                setMenuOpen(false);
-                setInformacoesOpen(false);
-            });
-        });
-
-        // Cleanup: Remove event listeners ao desmontar o componente
+        
         return () => {
-            if (hamburger) hamburger.removeEventListener('click', handleHamburgerClick);
-            document.removeEventListener('click', handleClickOutside);
-            if (informacoesDropdownBtn) informacoesDropdownBtn.removeEventListener('click', handleDropdownClick);
             window.removeEventListener('resize', handleResize);
-            menuLinks.forEach(link => link.removeEventListener('click', handleClickOutside));
         };
-    }, [informacoesOpen]); // Adicione informacoesOpen como dependência
+    }, []);
+
+    // Fecha o menu quando clica em um link (mobile)
+    const handleMobileLinkClick = () => {
+        closeMenus();
+    };
 
     return (
         <header className="andante">
@@ -118,7 +54,7 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            <nav aria-label="Navegação principal">
+            <nav aria-label="Navegação principal" className={menuOpen ? 'open' : ''}>
                 <div className="logo">
                     <Link to="/">
                         <img src="/imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas - Projeto de Extensão IFPR" />
@@ -152,31 +88,28 @@ const Navbar = () => {
                     <div className="bar"></div>
                 </div>
                 <ul className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
-                    <li><Link to="/" onClick={closeMenus}>Home</Link></li>
-                    <li><Link to="/eventos" onClick={closeMenus}>Eventos</Link></li>
-                    <li><Link to="/comunidade" onClick={closeMenus}>Comunidade</Link></li>
-                    <li><Link to="/pesquisas" onClick={closeMenus}>Pesquisas</Link></li>
+                    <li><Link to="/" onClick={handleMobileLinkClick}>Home</Link></li>
+                    <li><Link to="/eventos" onClick={handleMobileLinkClick}>Eventos</Link></li>
+                    <li><Link to="/comunidade" onClick={handleMobileLinkClick}>Comunidade</Link></li>
+                    <li><Link to="/pesquisas" onClick={handleMobileLinkClick}>Pesquisas</Link></li>
                     <li className={`dropdown ${informacoesOpen ? 'active' : ''}`}>
-                        <a href="#!" id="informacoesDropdownBtn" className="dropbtn" onClick={(e) => { 
-                            e.preventDefault(); 
-                            setInformacoesOpen(!informacoesOpen); 
-                        }}>
+                        <a href="#!" className="dropbtn" onClick={toggleInformacoes}>
                             Informações <span className="arrow-icon"></span>
                         </a>
                         <div className="dropdown-content">
-                            <Link to="/informacoes#direitos" onClick={closeMenus}>Direitos das Mulheres</Link>
-                            <Link to="/informacoes#politica" onClick={closeMenus}>Políticas Públicas</Link>
-                            <Link to="/informacoes#saude" onClick={closeMenus}>Saúde Reprodutiva</Link>
-                            <Link to="/informacoes#higiene" onClick={closeMenus}>Higiene e Autocuidado</Link>
-                            <Link to="/informacoes#violencia" onClick={closeMenus}>Tipos de violências</Link>
-                            <Link to="/informacoes#ciclo" onClick={closeMenus}>Ciclo de Violência</Link>
-                            <Link to="/informacoes#sinaisdeabuso" onClick={closeMenus}>Sinais de um relacionamento abusivo</Link>
-                            <Link to="/informacoes#rededeapoio" onClick={closeMenus}>Rede de Apoio</Link>
-                            <Link to="/informacoes#projetos" onClick={closeMenus}>Projetos de ajuda e apoio</Link>
-                            <Link to="/informacoes#plano" onClick={closeMenus}>Plano Municipal dos Direitos da Mulher</Link>
+                            <Link to="/informacoes#direitos" onClick={handleMobileLinkClick}>Direitos das Mulheres</Link>
+                            <Link to="/informacoes#politica" onClick={handleMobileLinkClick}>Políticas Públicas</Link>
+                            <Link to="/informacoes#saude" onClick={handleMobileLinkClick}>Saúde Reprodutiva</Link>
+                            <Link to="/informacoes#higiene" onClick={handleMobileLinkClick}>Higiene e Autocuidado</Link>
+                            <Link to="/informacoes#violencia" onClick={handleMobileLinkClick}>Tipos de violências</Link>
+                            <Link to="/informacoes#ciclo" onClick={handleMobileLinkClick}>Ciclo de Violência</Link>
+                            <Link to="/informacoes#sinaisdeabuso" onClick={handleMobileLinkClick}>Sinais de um relacionamento abusivo</Link>
+                            <Link to="/informacoes#rededeapoio" onClick={handleMobileLinkClick}>Rede de Apoio</Link>
+                            <Link to="/informacoes#projetos" onClick={handleMobileLinkClick}>Projetos de ajuda e apoio</Link>
+                            <Link to="/informacoes#plano" onClick={handleMobileLinkClick}>Plano Municipal dos Direitos da Mulher</Link>
                         </div>
                     </li>
-                    <li><Link to="/sobre" onClick={closeMenus}>Sobre</Link></li>
+                    <li><Link to="/sobre" onClick={handleMobileLinkClick}>Sobre</Link></li>
                 </ul>
             </nav>
         </header>
