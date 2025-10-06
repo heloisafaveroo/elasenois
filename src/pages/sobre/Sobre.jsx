@@ -87,7 +87,7 @@ const Sobre = () => {
                                 do Paraná – ALOP. É, ainda, mãe da Manuela.</p>
                         </div>
                         <div className="membro">
-                            <img src="/api/placeholder/120/120" alt="Michelli Cristina Galli" />
+                            <img src="/imagem/coord.checheli.jpeg" alt="Michelli Cristina Galli" />
                             <h3>Michelli Cristina Galli</h3>
                             <p>Possui graduação em Letras Português- Espanhol pela Universidade Estadual do Oeste do Paraná (2009). Mestrado em Letras - Linguagem e Sociedade pela Universidade Estadual do Oeste do Paraná (2016). Doutora pelo Programa de Pós-Graduação em Estudos da Linguagem da Universidade Estadual de Londrina - UEL (2022). Docente do Instituto Federal do Paraná - Câmpus Assis Chateaubriand/PR (desde 2012).</p>
                         </div>
