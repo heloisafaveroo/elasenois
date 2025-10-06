@@ -88,29 +88,30 @@ const Navbar = () => {
                     <div className="bar"></div>
                 </div>
                 <ul className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
-                    <li><Link to="/" onClick={handleMobileLinkClick}>Home</Link></li>
-                    <li><Link to="/eventos" onClick={handleMobileLinkClick}>Eventos</Link></li>
-                    <li><Link to="/comunidade" onClick={handleMobileLinkClick}>Comunidade</Link></li>
-                    <li><Link to="/pesquisas" onClick={handleMobileLinkClick}>Pesquisas</Link></li>
-                    <li className={`dropdown ${informacoesOpen ? 'active' : ''}`}>
-                        <a href="#!" className="dropbtn" onClick={toggleInformacoes}>
-                            Informações <span className="arrow-icon"></span>
-                        </a>
-                        <div className="dropdown-content">
-                            <Link to="/informacoes#direitos" onClick={handleMobileLinkClick}>Direitos das Mulheres</Link>
-                            <Link to="/informacoes#politica" onClick={handleMobileLinkClick}>Políticas Públicas</Link>
-                            <Link to="/informacoes#saude" onClick={handleMobileLinkClick}>Saúde Reprodutiva</Link>
-                            <Link to="/informacoes#higiene" onClick={handleMobileLinkClick}>Higiene e Autocuidado</Link>
-                            <Link to="/informacoes#violencia" onClick={handleMobileLinkClick}>Tipos de violências</Link>
-                            <Link to="/informacoes#ciclo" onClick={handleMobileLinkClick}>Ciclo de Violência</Link>
-                            <Link to="/informacoes#sinaisdeabuso" onClick={handleMobileLinkClick}>Sinais de um relacionamento abusivo</Link>
-                            <Link to="/informacoes#rededeapoio" onClick={handleMobileLinkClick}>Rede de Apoio</Link>
-                            <Link to="/informacoes#projetos" onClick={handleMobileLinkClick}>Projetos de ajuda e apoio</Link>
-                            <Link to="/informacoes#plano" onClick={handleMobileLinkClick}>Plano Municipal dos Direitos da Mulher</Link>
-                        </div>
-                    </li>
-                    <li><Link to="/sobre" onClick={handleMobileLinkClick}>Sobre</Link></li>
-                </ul>
+
+    <li><Link to="/" onClick={handleMobileLinkClick}>Home</Link></li>
+    <li><Link to="/eventos" onClick={handleMobileLinkClick}>Eventos</Link></li>
+    <li><Link to="/comunidade" onClick={handleMobileLinkClick}>Comunidade</Link></li>
+    <li><Link to="/pesquisas" onClick={handleMobileLinkClick}>Pesquisas</Link></li>
+    <li className={`dropdown ${informacoesOpen ? 'active' : ''}`}>
+        <a href="#!" className="dropbtn" onClick={toggleInformacoes}>
+            Informações <span className="arrow-icon"></span>
+        </a>
+        <div className="dropdown-content">
+            <Link to="/informacoes#direitos" onClick={handleMobileLinkClick}>Direitos das Mulheres</Link>
+            <Link to="/informacoes#politica" onClick={handleMobileLinkClick}>Políticas Públicas</Link>
+            <Link to="/informacoes#saude" onClick={handleMobileLinkClick}>Saúde Reprodutiva</Link>
+            <Link to="/informacoes#higiene" onClick={handleMobileLinkClick}>Higiene e Autocuidado</Link>
+            <Link to="/informacoes#violencia" onClick={handleMobileLinkClick}>Tipos de violências</Link>
+            <Link to="/informacoes#ciclo" onClick={handleMobileLinkClick}>Ciclo de Violência</Link>
+            <Link to="/informacoes#sinaisdeabuso" onClick={handleMobileLinkClick}>Sinais de um relacionamento abusivo</Link>
+            <Link to="/informacoes#rededeapoio" onClick={handleMobileLinkClick}>Rede de Apoio</Link>
+            <Link to="/informacoes#projetos" onClick={handleMobileLinkClick}>Projetos de ajuda e apoio</Link>
+            <Link to="/informacoes#plano" onClick={handleMobileLinkClick}>Plano Municipal dos Direitos da Mulher</Link>
+        </div>
+    </li>
+    <li><Link to="/sobre" onClick={handleMobileLinkClick}>Sobre</Link></li>
+</ul>
             </nav>
         </header>
     );
