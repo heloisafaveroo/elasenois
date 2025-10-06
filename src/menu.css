@@ -231,6 +231,35 @@ nav {
     transform: rotate(180deg); 
 }
 
+/* Estilos para o menu mobile */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.open {
+    display: block;
+}
+
+/* Estilos para o dropdown mobile */
+.mobile-menu .dropdown-content {
+    display: none;
+}
+
+.mobile-menu .dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* Estilo para a seta do dropdown */
+.arrow-icon {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.dropdown.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
 /* Media queries */
 @media (max-width: 768px) {
     .menu {
