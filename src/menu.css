@@ -181,8 +181,8 @@ nav {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(92, 25, 25, 0.95);
-    min-width: 280px;
+    background: rgba(92, 25, 25, 0.895);
+    min-width: 265px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     padding: 10px 0;
@@ -313,6 +313,7 @@ nav {
 
 /* Media queries */
 @media (max-width: 768px) {
+    
     .menu {
         display: none;
     }
