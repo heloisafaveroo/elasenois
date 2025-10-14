@@ -457,4 +457,30 @@ h4{
     .cta-section h2 {
         font-size: 2rem;
     }
+/* Garantir que o main ocupe toda a altura */
+main {
+    min-height: 100vh;
+}
+}
+/* Melhorias para mobile */
+@media (max-width: 768px) {
+    section.total {
+        scroll-margin-top: 20px; /* Espaço para não ficar colado no topo */
+    }
+    
+    /* Garantir que as seções tenham altura mínima */
+    .info-section {
+        min-height: 50vh;
+    }
+}
+
+/* Estilo para quando uma seção é alvo de hash */
+section.total:target {
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(108, 45, 45, 0.05); }
+    100% { background-color: transparent; }
 }
