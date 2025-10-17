@@ -5,6 +5,28 @@ import './eventos.css'
 
 const eventsData = [
     {
+        title: "Reunião: Apresentação do Site para o Conselho Municipal de Direitos da Mulher",
+        date: "14 de outubro, 2025",
+        location: "Secretaria da Conselho Municipal de Direitos da Mulher",
+        description: "descrever(omputador fabi",
+        images: [
+            { src: "/imagem/validação do site1.jpeg", alt: "validação do site1" },
+            { src: "/imagem/validação do site2.jpeg", alt: "validação do site2" },
+            { src: "/imagem/validação do site3.jpeg", alt: "validação do site3" },
+        ]
+    },
+    {
+        title: "Mostra de Curso",
+        date: "17 de Setembro, 2025",
+        location: "IFPR - Campus Assis Chateaubriand",
+        description: "descrever(computador fabi)",
+        images: [
+            { src: "/imagem/mostradecurso1.jpeg", alt: "mostra1" },
+            { src: "/imagem/mostradecurso3.jpeg", alt: "mostra2" },
+            { src: "/imagem/mostradecurso2.jpeg", alt: "mostra3" },
+        ]
+    },
+    {
         title: "V Conferência Estadual de Políticas para as Mulheres do Paraná:",
         date: "?? de Agosto, 2025",
         location: "?????",
@@ -28,6 +50,18 @@ const eventsData = [
             { src: "/imagem/FOTO52-mês das mulhes.jpg", alt: "I Conferência 4" },
         ]
     },
+        {
+        title: "Palestra com a Patrulha Maria da Penha:",
+        date: " 11 de agosto, 2025",
+        location: "Teatro municipal - Moacir Micheletto",
+        description: " O Coletivo de Mulheres “Elas por Elas”, projeto coordenado pelas professoras Celina de Oliveira Barbosa Gomes e Michelli Cristina Galli, do Instituto Federal do Paraná – Campus Assis Chateaubriand, promoveu uma ação de formação dos/as estudantes em parceria com a Polícia Militar, precisamente, com a Patrulha Maria da Penha. O evento, alusivo à Campanha “Agosto Lilás”, caracterizou-se pela realização de um ciclo de palestras, intituladas “Os Desafios da Polícia Militar no Enfrentamento do Feminicídio” e “De Homem para Homem”, ministradas para os/as alunos/as dos períodos diurno e noturno da instituição, tematizando o combate à violência contra a mulher.",
+        images: [
+            { src: "/imagem/FOTO41-mês das mulhes.jpg", alt: "Maria da Penha 1" },
+            { src: "/imagem/FOTO42-mês das mulhes.jpg", alt: "Maria da Penha 2" },
+            { src: "/imagem/FOTO43-mês das mulhes.jpg", alt: "Maria da Penha 3" },
+            { src: "/imagem/FOTO44-mês das mulhes.jpg", alt: "Maria da Penha 4" },
+        ]
+    },
     {
         title: "Campanha “Ônibus Lilás”:",
         date: "01 de Agosto, 2025",
@@ -40,18 +74,7 @@ const eventsData = [
             { src: "/imagem/FOTO48-mês das mulhes.jpg", alt: "Ônibus Lilás 4" },
         ]
     },
-    {
-        title: "Palestra com a Patrulha Maria da Penha:",
-        date: "?? de Julho, 2025",
-        location: "Teatro municipal - Moacir Micheletto",
-        description: "",
-        images: [
-            { src: "/imagem/FOTO41-mês das mulhes.jpg", alt: "Maria da Penha 1" },
-            { src: "/imagem/FOTO42-mês das mulhes.jpg", alt: "Maria da Penha 2" },
-            { src: "/imagem/FOTO43-mês das mulhes.jpg", alt: "Maria da Penha 3" },
-            { src: "/imagem/FOTO44-mês das mulhes.jpg", alt: "Maria da Penha 4" },
-        ]
-    },
+
     {
         title: "Dia das Mulheres: Elas por Elas - 1º Edição",
         date: "26 e 27 de Março, 2025",
