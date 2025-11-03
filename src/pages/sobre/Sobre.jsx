@@ -11,20 +11,24 @@ const Sobre = () => {
                     <div className="cardsolo">
                         <div className="card-content">
                             <b className="titulozinho">Como surgiu?</b>
-                            <p><b>Bem-vindas ao nosso espaço!</b>
-                                <br />O projeto Elas por Elas surgiu da necessidade urgente de combater as desigualdades
-                                presentes em nossa sociedade e de criar um ambiente mais justo e acolhedor para todas
-                                as mulheres. </p>
-                            <p>A ideia surgiu através de alguns conflitos envolvendo servidoras e alunas,
-                                que passavam por questões de pautas feministas sendo.........................
-                                informações ainda sendo construidas</p>
-                            <p>Lançado em 29 de março de 2023, como um projeto de extensão do Instituto Federal
-                                do Paraná (IFPR), nosso coletivo foi criado para ser um farol na luta pela inclusão
-                                e empoderamento feminino. Nosso propósito é ir além, oferecendo não apenas um
-                                lugar seguro para que mulheres compartilhem suas experiências, mas também
-                                organizando discussões profundas sobre o papel feminino na sociedade. Assim,
-                                contribuímos ativamente para a causa da equidade de gênero e para o avanço dos
-                                direitos das mulheres.</p>
+                            <p><b>Bem-vindas ao nosso espaço!</b> </p>
+                                <br />
+                            <p> Projeto "Elas por Elas": Um Farol na Luta pela Equidade de Gênero no IFPR
+                                O projeto Elas por Elas nasceu da necessidade urgente de combater as desigualdades presentes em
+                                 nossa sociedade e de criar um ambiente mais justo e acolhedor para todas as mulheres. Sua gênese 
+                                 reside em alguns conflitos envolvendo servidoras e alunas, que trouxeram à tona a intensidade e a 
+                                 relevância das pautas feministas que permeiam o cotidiano da comunidade acadêmica. Esses embates 
+                                 atuaram como um catalisador, evidenciando a carência de um espaço institucionalizado para o debate,
+                                  o acolhimento e a ação em prol dos direitos das mulheres.</p>
+                                  
+                                  <p>Lançado oficialmente em 29 de março de 2023, o "Elas por Elas" formalizou-se como um projeto 
+                                    de extensão do Instituto Federal do Paraná (IFPR). Desde então, nosso coletivo se estabeleceu com 
+                                    o propósito de ser um farol na luta pela inclusão e empoderamento feminino. A missão do projeto 
+                                    vai além da simples resposta aos conflitos: ele visa oferecer ativamente não apenas um lugar seguro 
+                                    para que mulheres compartilhem suas experiências, medos e vitórias, mas também ser um motor na 
+                                    organização de discussões profundas e estruturadas sobre o papel feminino na sociedade. Assim, 
+                                    o "Elas por Elas" contribui ativamente para a causa da equidade de gênero e para o avanço contínuo 
+                                    dos direitos das mulheres dentro e fora do ambiente do IFPR.</p>
                         </div>
                     </div>
 
