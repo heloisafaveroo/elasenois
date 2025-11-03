@@ -8,6 +8,7 @@ const Cadastro = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState({ text: '', type: '' });
     const [mostrarAdmin, setMostrarAdmin] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,33 +23,45 @@ const Cadastro = () => {
             return;
         }
 
+        setLoading(true);
+
         try {
-            const novoUsuario = {
-                email: email,
-                dataCadastro: new Date().toISOString()
-            };
-
-            const usuariosExistentes = JSON.parse(localStorage.getItem('usuariosCadastrados') || '[]');
-            
-            if (usuariosExistentes.some(usuario => usuario.email === email)) {
-                setMessage({ text: 'Este e-mail já está cadastrado.', type: 'error' });
-                return;
-            }
-
-            usuariosExistentes.push(novoUsuario);
-            localStorage.setItem('usuariosCadastrados', JSON.stringify(usuariosExistentes));
-
-            setMessage({ 
-                text: 'Cadastro realizado com sucesso! Você começará a receber nossas atualizações.', 
-                type: 'success' 
+            // Enviar dados para o backend
+            const response = await fetch('http://localhost:5000/api/cadastros', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email })
             });
-            setEmail('');
-            setPassword('');
-            setConfirmPassword('');
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setMessage({ 
+                    text: 'Cadastro realizado com sucesso! Você começará a receber nossas atualizações.', 
+                    type: 'success' 
+                });
+                setEmail('');
+                setPassword('');
+                setConfirmPassword('');
+            } else {
+                // Tratar erros específicos
+                if (response.status === 409) {
+                    setMessage({ text: 'Este e-mail já está cadastrado.', type: 'error' });
+                } else {
+                    setMessage({ text: data.error || 'Ocorreu um erro. Tente novamente.', type: 'error' });
+                }
+            }
 
         } catch (error) {
             console.error('Erro:', error);
-            setMessage({ text: 'Ocorreu um erro. Tente novamente mais tarde.', type: 'error' });
+            setMessage({ 
+                text: 'Erro ao conectar com o servidor. Verifique se o backend está rodando.', 
+                type: 'error' 
+            });
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -122,6 +135,7 @@ const Cadastro = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required 
+                            disabled={loading}
                         />
                     </div>
                     <div className="form-group">
@@ -133,6 +147,7 @@ const Cadastro = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required 
+                            disabled={loading}
                         />
                     </div>
                     <div className="form-group">
@@ -144,9 +159,20 @@ const Cadastro = () => {
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                             required 
+                            disabled={loading}
                         />
                     </div>
-                    <button type="submit" className="submit-btn">Cadastrar</button>
+                    <button 
+                        type="submit" 
+                        className="submit-btn"
+                        disabled={loading}
+                        style={{
+                            opacity: loading ? 0.6 : 1,
+                            cursor: loading ? 'not-allowed' : 'pointer'
+                        }}
+                    >
+                        {loading ? 'Cadastrando...' : 'Cadastrar'}
+                    </button>
                     {message.text && <p className={`message ${message.type}`}>{message.text}</p>}
                 </form>
             </div>

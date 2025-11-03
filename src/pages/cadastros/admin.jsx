@@ -6,6 +6,8 @@ const AdminPanel = ({ onVoltar }) => {
     const [error, setError] = useState('');
     const [usuarios, setUsuarios] = useState([]);
     const [filtro, setFiltro] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [mensagem, setMensagem] = useState({ text: '', type: '' });
 
     // Senha de administrador (em produção, isso deve ser mais seguro)
     const ADMIN_PASSWORD = "elasporelas2025";
@@ -20,18 +22,36 @@ const AdminPanel = ({ onVoltar }) => {
         }
     };
 
-    // Carrega usuários do localStorage (após autenticação)
+    // Carrega usuários do backend (após autenticação)
     useEffect(() => {
         if (authenticated) {
-            const carregarUsuarios = () => {
-                const usuariosSalvos = JSON.parse(localStorage.getItem('usuariosCadastrados') || '[]');
-                setUsuarios(usuariosSalvos);
-            };
             carregarUsuarios();
-            window.addEventListener('storage', carregarUsuarios);
-            return () => window.removeEventListener('storage', carregarUsuarios);
         }
     }, [authenticated]);
+
+    const carregarUsuarios = async () => {
+        setLoading(true);
+        try {
+            const response = await fetch('http://localhost:5000/api/cadastros');
+            if (response.ok) {
+                const data = await response.json();
+                setUsuarios(data);
+            } else {
+                setMensagem({ 
+                    text: 'Erro ao carregar usuários do servidor', 
+                    type: 'error' 
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao carregar usuários:', error);
+            setMensagem({ 
+                text: 'Erro ao conectar com o servidor. Verifique se o backend está rodando.', 
+                type: 'error' 
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // Filtrar usuários por e-mail
     const usuariosFiltrados = usuarios.filter(usuario =>
@@ -39,25 +59,72 @@ const AdminPanel = ({ onVoltar }) => {
     );
 
     // Excluir usuário
-    const excluirUsuario = (email) => {
-        const novosUsuarios = usuarios.filter(usuario => usuario.email !== email);
-        setUsuarios(novosUsuarios);
-        localStorage.setItem('usuariosCadastrados', JSON.stringify(novosUsuarios));
+    const excluirUsuario = async (email) => {
+        if (!window.confirm(`Tem certeza que deseja excluir o cadastro de ${email}?`)) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:5000/api/cadastros/${encodeURIComponent(email)}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                setMensagem({ 
+                    text: 'Cadastro excluído com sucesso!', 
+                    type: 'success' 
+                });
+                // Recarregar lista
+                carregarUsuarios();
+            } else {
+                const data = await response.json();
+                setMensagem({ 
+                    text: data.error || 'Erro ao excluir cadastro', 
+                    type: 'error' 
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao excluir usuário:', error);
+            setMensagem({ 
+                text: 'Erro ao conectar com o servidor', 
+                type: 'error' 
+            });
+        }
     };
 
     // Exportar para CSV
-    const exportarCSV = () => {
-        const cabecalho = ['E-mail', 'Data de Cadastro'];
-        const dadosCSV = [
-            cabecalho,
-            ...usuarios.map(u => [u.email, new Date(u.dataCadastro).toLocaleString('pt-BR')])
-        ].map(e => e.join(',')).join('\n');
-
-        const blob = new Blob([`\uFEFF${dadosCSV}`], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `usuarios_${new Date().toISOString().split('T')[0]}.csv`;
-        link.click();
+    const exportarCSV = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/api/cadastros/export/csv');
+            
+            if (response.ok) {
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `cadastros_${new Date().toISOString().split('T')[0]}.csv`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+                
+                setMensagem({ 
+                    text: 'CSV exportado com sucesso!', 
+                    type: 'success' 
+                });
+            } else {
+                setMensagem({ 
+                    text: 'Erro ao exportar CSV', 
+                    type: 'error' 
+                });
+            }
+        } catch (error) {
+            console.error('Erro ao exportar CSV:', error);
+            setMensagem({ 
+                text: 'Erro ao conectar com o servidor', 
+                type: 'error' 
+            });
+        }
     };
 
     const handleLogout = () => {
@@ -218,6 +285,32 @@ const AdminPanel = ({ onVoltar }) => {
                 </div>
             </div>
 
+            {/* Mensagens */}
+            {mensagem.text && (
+                <div style={{
+                    padding: '15px',
+                    marginBottom: '20px',
+                    borderRadius: '5px',
+                    background: mensagem.type === 'success' ? '#d4edda' : '#f8d7da',
+                    color: mensagem.type === 'success' ? '#155724' : '#721c24',
+                    border: `1px solid ${mensagem.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`
+                }}>
+                    {mensagem.text}
+                    <button 
+                        onClick={() => setMensagem({ text: '', type: '' })}
+                        style={{
+                            float: 'right',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            fontSize: '1.2rem'
+                        }}
+                    >
+                        ×
+                    </button>
+                </div>
+            )}
+
             {/* Estatísticas */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px', marginBottom: '30px' }}>
                 <div style={{ background: '#f0f0f0', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
@@ -261,51 +354,89 @@ const AdminPanel = ({ onVoltar }) => {
                 >
                     📥 Exportar CSV
                 </button>
+                <button
+                    onClick={carregarUsuarios}
+                    disabled={loading}
+                    style={{
+                        background: '#6C2D2D',
+                        color: 'white',
+                        border: 'none',
+                        padding: '10px 20px',
+                        borderRadius: '5px',
+                        cursor: loading ? 'not-allowed' : 'pointer',
+                        whiteSpace: 'nowrap',
+                        opacity: loading ? 0.6 : 1
+                    }}
+                >
+                    {loading ? '🔄 Carregando...' : '🔄 Atualizar'}
+                </button>
             </div>
 
             {/* Lista de Usuários */}
             <div style={{ background: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                    <thead>
-                        <tr style={{ background: '#6C2D2D', color: 'white' }}>
-                            <th style={{ padding: '12px', textAlign: 'left' }}>E-mail</th>
-                            <th style={{ padding: '12px', textAlign: 'left' }}>Data de Cadastro</th>
-                            <th style={{ padding: '12px', width: '100px' }}>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {usuariosFiltrados.map((usuario, index) => (
-                            <tr key={index} style={{ borderBottom: '1px solid #eee' }}>
-                                <td style={{ padding: '12px' }}>{usuario.email}</td>
-                                <td style={{ padding: '12px' }}>
-                                    {new Date(usuario.dataCadastro).toLocaleString('pt-BR')}
-                                </td>
-                                <td style={{ padding: '12px', textAlign: 'center' }}>
-                                    <button
-                                        onClick={() => excluirUsuario(usuario.email)}
-                                        style={{
-                                            background: '#ff4444',
-                                            color: 'white',
-                                            border: 'none',
-                                            padding: '5px 10px',
-                                            borderRadius: '3px',
-                                            cursor: 'pointer',
-                                            fontSize: '12px'
-                                        }}
-                                    >
-                                        Excluir
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                
-                {usuariosFiltrados.length === 0 && (
-                    <p style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
-                        {filtro ? 'Nenhum usuário encontrado' : 'Nenhum usuário cadastrado'}
+                {loading ? (
+                    <p style={{ textAlign: 'center', padding: '40px', color: '#666' }}>
+                        Carregando dados...
                     </p>
+                ) : (
+                    <>
+                        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                            <thead>
+                                <tr style={{ background: '#6C2D2D', color: 'white' }}>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>E-mail</th>
+                                    <th style={{ padding: '12px', textAlign: 'left' }}>Data de Cadastro</th>
+                                    <th style={{ padding: '12px', width: '100px' }}>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {usuariosFiltrados.map((usuario, index) => (
+                                    <tr key={index} style={{ borderBottom: '1px solid #eee' }}>
+                                        <td style={{ padding: '12px' }}>{usuario.email}</td>
+                                        <td style={{ padding: '12px' }}>
+                                            {new Date(usuario.dataCadastro).toLocaleString('pt-BR')}
+                                        </td>
+                                        <td style={{ padding: '12px', textAlign: 'center' }}>
+                                            <button
+                                                onClick={() => excluirUsuario(usuario.email)}
+                                                style={{
+                                                    background: '#ff4444',
+                                                    color: 'white',
+                                                    border: 'none',
+                                                    padding: '5px 10px',
+                                                    borderRadius: '3px',
+                                                    cursor: 'pointer',
+                                                    fontSize: '12px'
+                                                }}
+                                            >
+                                                Excluir
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        
+                        {usuariosFiltrados.length === 0 && (
+                            <p style={{ textAlign: 'center', padding: '20px', color: '#666' }}>
+                                {filtro ? 'Nenhum usuário encontrado' : 'Nenhum usuário cadastrado'}
+                            </p>
+                        )}
+                    </>
                 )}
+            </div>
+
+            {/* Informação sobre o arquivo JSON */}
+            <div style={{
+                marginTop: '30px',
+                padding: '15px',
+                background: '#e7f3ff',
+                border: '1px solid #b3d9ff',
+                borderRadius: '5px',
+                fontSize: '0.9rem'
+            }}>
+                <strong>📁 Localização do arquivo JSON:</strong><br />
+                Os dados estão sendo salvos em: <code>server/data/cadastros.json</code><br />
+                Você pode copiar este arquivo para usar em sistemas de disparo de e-mail.
             </div>
         </div>
     );
