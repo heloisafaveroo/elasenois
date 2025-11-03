@@ -25,6 +25,7 @@ app.use('/api/topicos', require('./routes/topicos'));
 app.use('/api/projetos-apoio', require('./routes/projetosApoio'));
 app.use('/api/sobre-topico', require('./routes/sobreTopico'));
 app.use('/api/coordenadoras', require('./routes/coordenadoras'));
+app.use('/api/cadastros', require('./routes/cadastros'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
