@@ -406,7 +406,6 @@ const Informacoes = () => {
                             <h3>Centros de Referência</h3>
                             <ul>
                                 <li><strong>CRAS:</strong> Centro de Referência de Assistência Social </li>
-                                <li><strong>Casa Abrigo Bem-Me-Quer:</strong> Serviço de Acolhimento Familiar</li>
                                 <li><strong>CREAS:</strong> Centro de Referência Especializado de Assistência Social</li>
                             </ul>
                         </div>
