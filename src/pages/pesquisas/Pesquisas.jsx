@@ -184,6 +184,48 @@ const Pesquisas = () => {
                         <div className="description">  Este livro aborda os debates feministas contemporâneos sobre o conceito de gênero, questionando a estabilidade das categorias de sexo, gênero e desejo. Judith Butler utiliza uma abordagem genealógica para analisar como a linguagem e as estruturas de poder constroem essas categorias, explorando temas como a matriz heterossexual, a psicanálise e os atos corporais subversivos.
                         </div>
                     </div>
+
+                     <div className="link-item">
+                        <h5><a href="./pdf/Cartilha - Direitos das Mulheres.pdf" target="_blank" rel="noopener noreferrer"> Cartilha - Direitos das Mulheres</a></h5>
+                        <div className="author">Instituto Nelson Wilians (INW),2023. </div>
+                        <div className="description">O material tem como missão apresentar, de forma clara e objetiva, informações sobre o direito das mulheres e maneiras de garanti-lo. Define o que é violência contra a mulher , lista os direitos e as leis brasileiras que os asseguram, os tipos de violência, e orienta sobre como denunciar e os serviços especializados de atendimento.
+                        </div>
+                    </div>
+
+                     <div className="link-item">
+                        <h5><a href="./pdf/Cartilha de Prevenção aos Assédios Moral e Sexual.pdf" target="_blank" rel="noopener noreferrer">  Cartilha - Prevenção aos Assédios Moral e Sexual</a></h5>
+                        <div className="author">CAPES (Coordenação de Aperfeiçoamento de Pessoal de Nível Superior). Publicada após a Lei nº 14.540, de 03 de abril de 2023.</div>
+                        <div className="description">Cartilha de orientação da CAPES para prevenção e tratamento dos assédios moral e sexual no ambiente de trabalho. Apresenta aos agentes da Fundação orientações e exemplos sobre o que é e o que não é assédio, o que diz a lei, como prevenir e como as vítimas e a instituição devem agir.
+                        </div>
+                    </div>
+
+                     <div className="link-item">
+                        <h5><a href="./pdf/Cartilha para Crianças - Lei_Maria_da_Penha.pdf" target="_blank" rel="noopener noreferrer">  Cartilha infantil - Lei Maria da Penha</a></h5>
+                        <div className="author">SENADO FEDERAL e parceiros. Texto de Madu Macedo. 2ª Edição, 2021.</div>
+                        <div className="description">Cartilha educativa em formato acessível, voltada ao público jovem e adolescente. Resume os dispositivos da Lei Maria da Penha , abordando os tipos de violência e a importância de não hesitar em denunciar às autoridades.
+                        </div>
+                    </div>
+
+                    <div className="link-item">
+                        <h5><a href="./pdf/Epistemologia Feminista.pdf" target="_blank" rel="noopener noreferrer">  Epistemologia Feminista</a></h5>
+                        <div className="author">Janyne Sattler</div>
+                        <div className="description">É uma introdução à epistemologia feminista, que é uma contribuição radical do feminismo para repensar a filosofia. O texto questiona as bases canônicas e androcêntricas do conhecimento, argumentando que elas possuem um viés social e político. Busca um conhecimento mais democrático e reconhece a experiência feminina como relevante para as teorias do conhecimento.
+                        </div>
+                    </div>
+
+                    <div className="link-item">
+                        <h5><a href="./pdf/A dominação masculina - Pierre Bourdieu.pdf" target="_blank" rel="noopener noreferrer"> A dominação masculina</a></h5>
+                        <div className="author">Pierre Bourdieu. Publicação original: 1998. 11ª Edição (Bertrand Brasil) em 2012.</div>
+                        <div className="description">O livro é uma análise sociológica sobre como a dominação dos homens sobre as mulheres se estabelece, se "naturaliza" e se perpetua historicamente. Bourdieu argumenta que essa dominação é reproduzida por instituições como Família, Escola e Estado. O conceito central é a violência simbólica, uma forma de coerção "invisível" que naturaliza a subordinação feminina. O autor usa a sociedade cabila (Berberes) como ferramenta para expor e analisar esse inconsciente masculino que perdura nas sociedades atuais.
+                        </div>
+                    </div>
+
+                    <div className="link-item">
+                        <h5><a href="./pdf/Guia Lilás - Orientações para a prevenção do assédio moral e sexual no governo federal.pdf" target="_blank" rel="noopener noreferrer">  Guia Lilás - Orientações para a prevenção do assédio moral e sexual no governo federal</a></h5>
+                        <div className="author">CONTROLADORIA-GERAL DA UNIÃO (CGU). Novembro de 2024 (2ª Edição).</div>
+                        <div className="description">Guia de referência da CGU para prevenção e enfrentamento ao assédio moral, sexual e à discriminação no serviço público federal. Apresenta o que é assédio e discriminação, as bases jurídicas, a matriz para avaliação de gravidade de condutas e a jornada da denúncia. O objetivo é criar ambientes de trabalho mais seguros e saudáveis.
+                        </div>
+                    </div>
                 </section>
             </section>
         </main>
