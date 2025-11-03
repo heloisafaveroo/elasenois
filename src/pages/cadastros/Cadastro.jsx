@@ -3,9 +3,8 @@ import AdminPanel from './admin';
 import './cadastro.css';
 
 const Cadastro = () => {
+    // 1. Manter apenas o estado do e-mail e outros estados necessários
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState({ text: '', type: '' });
     const [mostrarAdmin, setMostrarAdmin] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -13,26 +12,20 @@ const Cadastro = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (password !== confirmPassword) {
-            setMessage({ text: 'As senhas não coincidem.', type: 'error' });
-            return;
-        }
-
-        if (password.length < 6) {
-            setMessage({ text: 'A senha deve ter pelo menos 6 caracteres.', type: 'error' });
-            return;
-        }
-
+        // 2. Remover as validações de senha (password !== confirmPassword e password.length < 6)
+        // O código continua daqui se o e-mail for válido (validação nativa do input type="email")
+        
         setLoading(true);
 
         try {
-            // Enviar dados para o backend
-            const response = await fetch('http://localhost:5000/api/cadastros', {
+            // Enviar dados para o backend (apenas e-mail)
+            const response = await fetch('http://localhost:3000/api/cadastros', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email })
+                // 4. Manter apenas o email no corpo da requisição
+                body: JSON.stringify({ email }) 
             });
 
             const data = await response.json();
@@ -43,8 +36,7 @@ const Cadastro = () => {
                     type: 'success' 
                 });
                 setEmail('');
-                setPassword('');
-                setConfirmPassword('');
+                // 4. Remover reset de password e confirmPassword
             } else {
                 // Tratar erros específicos
                 if (response.status === 409) {
@@ -87,7 +79,7 @@ const Cadastro = () => {
             flexDirection: 'column',
             gap: '20px'
         }}>
-            {/* Botão para o Painel Admin */}
+            {/* Botão para o Painel Admin - Mantido */}
             <button 
                 onClick={irParaAdmin}
                 style={{
@@ -134,30 +126,6 @@ const Cadastro = () => {
                             name="email" 
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required 
-                            disabled={loading}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="passwordModal">Criar Senha:</label>
-                        <input 
-                            type="password" 
-                            id="passwordModal" 
-                            name="password" 
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required 
-                            disabled={loading}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="confirmPasswordModal">Confirmar Senha:</label>
-                        <input 
-                            type="password" 
-                            id="confirmPasswordModal" 
-                            name="confirmPassword" 
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
                             required 
                             disabled={loading}
                         />
