@@ -9,9 +9,10 @@ const Pesquisas = () => {
             <section className="estudo">
                 <section className="metodologia">
                     <h2>Artigo do projeto</h2>
-                    <p>Com pesquisa levantadas sobre estudos de gênero, empoderamento feminino e metodologias participativas.
-                        Abaixo você encontra nosso artigo "A CRIAÇÃO DE UM SITE PARA A DIVULGAÇÃO DO PROJETO COLETIVO DE MULHERES “ELAS POR ELAS” E SUAS AÇÕES”,
-                        que apresenta uma grande tragetória até os dias de hoje e a metodologia do desenvolvimento do site (talvez a melhorar...) </p>
+                    <p>Com base em pesquisas sobre estudos de gênero, empoderamento feminino e metodologias participativas, 
+                        apresentamos a seguir o artigo 'A CRIAÇÃO DE UM SITE PARA A DIVULGAÇÃO DO PROJETO COLETIVO DE MULHERES “ELAS 
+                        POR ELAS” E SUAS AÇÕES'. Este trabalho detalha a significativa trajetória do Coletivo de Mulheres 'Elas por Elas' até os 
+                        dias atuais e explora a metodologia de desenvolvimento do site.</p>
                     <div className="link-item">
                         <h5><a href="#">A CRIAÇÃO DE UM SITE PARA A DIVULGAÇÃO DO PROJETO COLETIVO DE MULHERES “ELAS POR ELAS” E SUAS AÇÕES</a></h5>
                         <div className="author">Camila Bezerra, Fabiola Dutra, Heloisa Favero; 2025</div>
@@ -23,8 +24,7 @@ const Pesquisas = () => {
             <section className="estudo">
                 <section className="materiais">
                     <h2>Artigos, Estudos e Materiais de Apoio</h2>
-                    <p>Abaixo você encontra os principais materiais que embasam nosso trabalho, 
-                        e além, livros e materiais a mais relacionado ao tema. (terminar)
+                    <p>A seção a seguir apresenta os materiais centrais que fundamentam nosso trabalho, complementados por recursos adicionais e leituras relacionadas ao tema.
                     </p>
                     
                     <div className="link-item">
