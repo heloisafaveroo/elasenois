@@ -32,7 +32,7 @@ const AdminPanel = ({ onVoltar }) => {
     const carregarUsuarios = async () => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/api/cadastros');
+            const response = await fetch('https://elasporelas-0r2t.onrender.com/api/cadastros');
             if (response.ok) {
                 const data = await response.json();
                 setUsuarios(data);
@@ -65,7 +65,7 @@ const AdminPanel = ({ onVoltar }) => {
         }
 
         try {
-            const response = await fetch(`http://localhost:5000/api/cadastros/${encodeURIComponent(email)}`, {
+            const response = await fetch(`https://elasporelas-0r2t.onrender.com/api/cadastros/${encodeURIComponent(email)}`, {
                 method: 'DELETE'
             });
 
@@ -95,7 +95,7 @@ const AdminPanel = ({ onVoltar }) => {
     // Exportar para CSV
     const exportarCSV = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/cadastros/export/csv');
+            const response = await fetch('https://elasporelas-0r2t.onrender.com/api/cadastros/export/csv');
             
             if (response.ok) {
                 const blob = await response.blob();
