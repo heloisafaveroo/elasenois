@@ -4,6 +4,17 @@ import './eventos.css'
 
 
 const eventsData = [
+
+    {
+        title: "Apresentação do Site na FEpiac",
+        date: "07 de Novembro, 2025",
+        location: "IFPR - Campus Assis Chateaubriand",
+        description: "A apresentação do projeto final de curso, intitulada 'Criação de um site para a divulgação do projeto  Coletivo de Mulheres Elas por Elas e suas ações', foi realizada durante o evento da FEPIAC, uma tradicional mostra acadêmica onde os alunos, professores, servidores e publico de fora do instituto apresentam suas soluções inovadoras e criativas. Durante a apresentação, nós mostramos como o site foi desenvolvido, destacando aspectos como a usabilidade, o design intuitivo e a integração com ferramentas de apoio a iniciativas sociais. Além disso, enfatizamos a importância de um ambiente digital seguro e acolhedor, que visa não apenas fornecer informações, mas também criar uma comunidade de apoio mútuo entre as participantes. O evento foi uma oportunidade para que tivemos de compartilhar nossas pesquisas, processos de criação e desafios enfrentados ao longo do desenvolvimento do projeto, recebendo feedbacks construtivos tanto de professores quanto de colegas. O projeto foi bem recebido e destacou-se pela relevância social e pelo impacto potencial no fortalecimento da rede de apoio às mulheres.",
+        images: [
+            { src: "/imagem/FEpiac1.jpeg", alt: "FEpiac1" },
+            { src: "/imagem/FEpiac2.jpeg", alt: "FEpiac2" },
+        ]
+    },
     {
         title: "Reunião: Apresentação do Site para o Conselho Municipal de Direitos da Mulher",
         date: "14 de outubro, 2025",
