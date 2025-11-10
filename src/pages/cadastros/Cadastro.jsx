@@ -19,7 +19,7 @@ const Cadastro = () => {
 
         try {
             // Enviar dados para o backend (apenas e-mail)
-            const response = await fetch('http://localhost:3000/api/cadastros', {
+            const response = await fetch('http://localhost:5000/api/cadastros', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
