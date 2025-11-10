@@ -41,7 +41,7 @@ const eventsData = [
         title: "V Conferência Estadual de Políticas para as Mulheres do Paraná:",
         date: "?? de Agosto, 2025",
         location: "?????",
-        description: "descrever",
+        description: "Sem Descrição",
         images: [
             { src: "/imagem/FOTO53-mês das mulhes.jpg", alt: "V Conferência 1" },
             { src: "/imagem/FOTO54-mês das mulhes.jpg", alt: "V Conferência 2" },
@@ -53,7 +53,7 @@ const eventsData = [
         title: "I Conferência Municipal de Políticas Públicas para as Mulheres:",
         date: "?? de Agosto, 2025",
         location: "Auditório - Prefeitura Municipal",
-        description: "descrever",
+        description: "Sem Descrição",
         images: [
             { src: "/imagem/FOTO49-mês das mulhes.jpg", alt: "I Conferência 1" },
             { src: "/imagem/FOTO50-mês das mulhes.jpg", alt: "I Conferência 2" },
