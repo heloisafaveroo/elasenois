@@ -162,7 +162,13 @@ p {
     margin-top: 30px;
 }
 
-.membro {
+.membrodeitado {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.membro, .membrodeitado {
     border: 2px solid #f0f0f0;
     padding: 25px;
     border-radius: 15px;
@@ -189,7 +195,7 @@ p {
     font-size: 1.3rem;
 }
 
-.membro .fez {
+.membro, .fez, .membrodeitado {
     font-style: italic;
     color: #8d1919;
     margin-bottom: 15px;
@@ -197,7 +203,7 @@ p {
     font-size: 1rem;
 }
 
-.membro p:last-child {
+.membro, .membrodeitado p:last-child {
     color: #666;
     font-size: 0.95rem;
 }
@@ -237,9 +243,7 @@ p {
     }
 
     .noistodas{
-        width: 95%;
-        padding: 30px 10px;
-        margin: 20px auto;
+        padding: 15px;
     }
 
 
