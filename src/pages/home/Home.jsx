@@ -12,7 +12,7 @@ const Home = () => {
                 </div>
                 <div className="text fade-in">
                     <h2>Quem somos nós?</h2>
-                    <p>Projeto de extensão do IFPR (Instituto Federal do Paraná) com intuito de ser
+                    <p>Projeto de pesquisa e extensão do IFPR (Instituto Federal do Paraná) com intuito de ser
                         um espaço acolhedor feminino, não apenas ouvindo mulheres, mas também
                         organizando discussões a respeito do papel das mesmas na sociedade, assim
                         contribuindo para essa causa.</p>
