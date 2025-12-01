@@ -162,13 +162,7 @@ p {
     margin-top: 30px;
 }
 
-.membrodeitado {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.membro, .membrodeitado {
+.membro {
     border: 2px solid #f0f0f0;
     padding: 25px;
     border-radius: 15px;
@@ -195,7 +189,7 @@ p {
     font-size: 1.3rem;
 }
 
-.membro, .fez, .membrodeitado {
+.membro .fez {
     font-style: italic;
     color: #8d1919;
     margin-bottom: 15px;
@@ -203,7 +197,7 @@ p {
     font-size: 1rem;
 }
 
-.membro, .membrodeitado p:last-child {
+.membro p:last-child {
     color: #666;
     font-size: 0.95rem;
 }
