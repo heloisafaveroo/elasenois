@@ -127,6 +127,12 @@ const Sobre = () => {
                                 como a lógica de programação e o banco de dados. Sua dedicação garantiu que a plataforma fosse robusta
                                 e eficiente, servindo como a espinha dorsal que sustenta toda a experiência que você tem ao navegar por aqui.</p>
                         </div>
+                        <div className="membro">
+                            <img src="/imagem/fotosamuel.jpeg" alt="Samuel Milczuk" />
+                            <h3>Samuel Milczuk</h3>
+                            <p className="fez">• Orientador</p>
+                            <p>Com a função de orientar as alunas desenvolvedoras na estrutura e no layout, com o foco em priorizar a acessibilidade garantindo que a interface seja intuitiva, funcional e visualmente agradável para todos os usuários.</p>
+                        </div>
                     </div>
                 </section>
             </section>
@@ -135,3 +141,4 @@ const Sobre = () => {
 };
 
 export default Sobre;
+
